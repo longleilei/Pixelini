@@ -1,0 +1,18 @@
+cmake_minimum_required (VERSION 3.17.3)
+project (Pixelini)
+
+set(CMAKE_CXX_COMPILER clang++)
+
+set(PROJECT_HEADER_DIR ${CMAKE_SOURCE_DIR}/headers)
+
+file(GLOB_RECURSE Pixelini_SRC "src/*.cpp")
+
+file(GLOB_RECURSE APP_HEADERS "${PROJECT_HEADER_DIR}/*.h")
+
+ADD_DEFINITIONS(-Wall -std=c++17 -fexceptions)
+
+ADD_EXECUTABLE(Pixelini ${APP_HEADERS} ${Pixelini_SRC})
+
+target_include_directories(Pixelini PRIVATE ${PROJECT_HEADER_DIR})
+
+
