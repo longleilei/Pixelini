@@ -3,7 +3,7 @@
 #include "files/exception.h"
 
 int main(){
-    std::string name{"../assets/land.bmp"}; 
+    //std::string name{"../assets/land.bmp"}; 
     //std::string name{"1234"}; 
     try{
         //Loader l{name}; 
