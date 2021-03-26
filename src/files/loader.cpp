@@ -1,11 +1,9 @@
 #include "files/loader.h"
 #include <string>
 #include <stdio.h>
-#include <iostream>
-#include <fstream>
 #include "files/exception.h"
 
-Loader::Loader():resource{nullptr}, buffer{nullptr}; 
+Loader::Loader() = default; 
 
 Loader& Loader::getInstance(){
     static Loader instance; 
@@ -13,43 +11,37 @@ Loader& Loader::getInstance(){
 }
 
 
-size_t Loader::calculateSize()
+size_t Loader::calculateSize( FILE* resource )
 {
 
-    fseek(resource.get(), 0L, SEEK_END);
-    auto sz = ftell(resource.get());
+    fseek(resource, 0L, SEEK_END);
+    auto sz = ftell(resource);
     //go back to the beginning
-    fseek(resource.get(), 0L, SEEK_SET);
+    fseek(resource, 0L, SEEK_SET);
+    bufferSize = sz; 
     return sz;
 }
 
-const char *Loader::getBuffer()
-{
-    return buffer.get();
-}
 
-void Loader::openFile(std::string fileName){
 
-    location = fileName; 
+std::unique_ptr<char[]> Loader::openFile(std::string fileName){
+
+    
     std::unique_ptr<FILE, void(*)(FILE*)> res{fopen(fileName.c_str(), "r+"), [](FILE *file) { fclose(file); }}; 
-    resource.reset(std::move(res)); 
 
-    if (resource != nullptr)
+    if (res != nullptr)
     {
-        std::cout << "file opened " << std::endl;
-        fillBuffer();
-        return;
+        auto size{calculateSize(res.get())};
+        std::unique_ptr<char[]>b{new char[size]};
+        fread(b.get(), sizeof(char), size, res.get());
+        return b;
     }
 
     Excptn pathError{"error open file"}; 
     pathError.setPath(fileName); 
     throw pathError; 
+
+    
 }
 
-void Loader::fillBuffer()
-{
-    auto size{calculateSize()};
-    char *b{new char[size]};
-    fread(b, sizeof(char), size, resource.get());
-    buffer.reset(std::move(b));
-}
+

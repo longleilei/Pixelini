@@ -6,22 +6,14 @@
 
 class Loader{
 
-    std::string location{}; 
-    std::unique_ptr<FILE, void(*)(FILE*)> resource;
-    std::unique_ptr<char[]> buffer;   
     Loader(); 
-    
+    size_t calculateSize(FILE* resource); 
+
 
 public: 
     static Loader& getInstance(); 
-
-    size_t calculateSize(); 
-
-    const char* getBuffer();
-
-    void fillBuffer(); 
-
-    void openFile(std::string fileName); 
+    size_t bufferSize;  
+    std::unique_ptr<char[]> openFile(std::string fileName); 
 
 }; 
 
