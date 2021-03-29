@@ -1,5 +1,6 @@
 #pragma once
 #pragma pack(1) 
+#include <vector> 
 
 struct BITMAP_header
 {
@@ -21,18 +22,21 @@ struct DIB_header
     unsigned int image_size;
 };
 
-struct RGB {
-    unsigned char blue; 
-    unsigned char green; 
-    unsigned char red; 
-}; 
+ 
 
 class BMP {
 
     BITMAP_header header;
     DIB_header dibHeader; 
-    RGB color; 
+    
+    std::vector<char> blue; 
+    std::vector<char> green;
+    std::vector<char> red;   
+    
     std::unique_ptr<char[]> buffer; 
+
+    
+    void createPixelData(); 
 
 public: 
     BMP(std::string fileName); 

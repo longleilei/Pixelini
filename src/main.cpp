@@ -12,6 +12,7 @@ int main(){
         
 
         BMP bmp{name}; 
+        
        
         
     } catch(Excptn& errorPath){
