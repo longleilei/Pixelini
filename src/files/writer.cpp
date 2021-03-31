@@ -8,7 +8,8 @@ Writer::Writer()=default;
 
 Writer& Writer::getInstance(){
     static Writer instance; 
-    return instance;  
+    return instance; 
+     //hello 
 }
 
 

@@ -8,6 +8,7 @@ class Loader{
 
     Loader(); 
     size_t calculateSize(FILE* resource); 
+     //hello
 
 
 public: 

@@ -30,6 +30,7 @@ std::unique_ptr<char[]> Loader::openFile(std::string fileName){
     std::unique_ptr<FILE, void(*)(FILE*)> res{fopen(fileName.c_str(), "r+"), [](FILE *file) { fclose(file); }}; 
 
     if (res != nullptr)
+     //hello
     {
         auto size{calculateSize(res.get())};
         std::unique_ptr<char[]>b{new char[size]};

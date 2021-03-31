@@ -20,7 +20,6 @@ void BMP::createPixelData(){
     // std::cout << std::hex << static_cast<unsigned int>(buffer.get()[header.image_offset+1]) << "\n"; 
     // std::cout << std::hex << static_cast<unsigned int>(buffer.get()[header.image_offset+2]) << "\n"; 
 
-    //data[3 * (i * width + j)]
 
     //char* colorData = &(buffer.get()[header.image_offset]); 
 
