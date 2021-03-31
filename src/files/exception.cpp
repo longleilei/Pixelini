@@ -16,4 +16,5 @@ std::string Excptn::getPath(){
 
 void Excptn::setPath(std::string _path){
     path = _path; 
+     //hello
 }
