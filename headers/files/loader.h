@@ -12,7 +12,7 @@ class Loader{
 
 public: 
     static Loader& getInstance(); 
-    size_t bufferSize;  
+    size_t bufferSize{};
     std::unique_ptr<char[]> openFile(std::string fileName); 
 
 }; 

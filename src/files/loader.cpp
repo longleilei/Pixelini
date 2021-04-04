@@ -13,7 +13,6 @@ Loader& Loader::getInstance(){
 
 size_t Loader::calculateSize( FILE* resource )
 {
-
     fseek(resource, 0L, SEEK_END);
     auto sz = ftell(resource);
     //go back to the beginning
@@ -27,12 +26,14 @@ size_t Loader::calculateSize( FILE* resource )
 std::unique_ptr<char[]> Loader::openFile(std::string fileName){
 
     
-    std::unique_ptr<FILE, void(*)(FILE*)> res{fopen(fileName.c_str(), "r+"), [](FILE *file) { fclose(file); }}; 
+    std::unique_ptr<FILE, void(*)(FILE*)> res{fopen(fileName.c_str(), "rb+"), [](FILE *file) { fclose(file); }}; 
 
     if (res != nullptr)
     {
+        char* x{};
         auto size{calculateSize(res.get())};
         std::unique_ptr<char[]>b{new char[size]};
+        x = new char[size];
         fread(b.get(), sizeof(char), size, res.get());
         return b;
     }

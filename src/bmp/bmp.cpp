@@ -14,7 +14,7 @@ BMP::BMP(std::string fileName){
 }
 
 void BMP::createPixelData(){
-    int pixelCount = header.size - header.image_offset; 
+    const int pixelCount = header.size - 54; 
     size_t i{header.image_offset}; 
     // std::cout << std::hex << static_cast<unsigned int>(buffer.get()[header.image_offset]) << "\n"; 
     // std::cout << std::hex << static_cast<unsigned int>(buffer.get()[header.image_offset+1]) << "\n"; 
@@ -23,16 +23,27 @@ void BMP::createPixelData(){
     //data[3 * (i * width + j)]
 
     //char* colorData = &(buffer.get()[header.image_offset]); 
-
-    for(int i{0}; i < dibHeader.width; i++){ 
-        for(int j{0}; j < dibHeader.height; j+=3){
-            buffer.get()[header.image_offset + j] = 255; 
-            // std::cout << "i: " << i << "j: " << j << " colorData: " 
-            // << colorData[i * dibHeader.width + j] << std::endl;   
-        }
-        
+    auto offset = header.image_offset;
+    uint32_t channels = dibHeader.bitsperpixel / 8;
+    std::cout << dibHeader.width << std::endl;
+    std::cout << dibHeader.height << std::endl;
+    std::vector<uint8_t> pixels;
+    for (int i{}; i < 3* dibHeader.height * dibHeader.width; i++) {
+        pixels.push_back(buffer.get()[offset + i]);
     }
-    Writer::getInstance().writeToFile("../result.bmp", header.size, std::move(buffer)); 
+    for (int i{}; i < dibHeader.height; i++) {
+        for (int j{}; j < dibHeader.width; j++) {
+            pixels[channels * (i * dibHeader.width + j)+2] = 0;
+            pixels[channels * (i * dibHeader.width + j) + 1] = 0;
+        }
+    }
+    for (int i{}; i < 3 * dibHeader.height * dibHeader.width; i++) {
+        buffer.get()[offset + i] = pixels[i];
+    }
+
+        std::cout << pixels.size() << " ";
+
+    Writer::getInstance().writeToFile("../assets/result.bmp", header.size, std::move(buffer)); 
 
     
 }
@@ -52,7 +63,7 @@ void BMP::readHeader(){
 
     
     if(header.name[0] != 'B' && header.name[1] != 'M'){
-        std::cout << 'change file format'; 
+        std::cout << "change file format"; 
     } 
 
     
