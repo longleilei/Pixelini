@@ -15,7 +15,7 @@ Writer& Writer::getInstance(){
 
 void Writer::writeToFile(std::string locToWrite, size_t size, std::unique_ptr<char[]> buffer){
 
-    FILE * fp = fopen(locToWrite.c_str(), "w+");
+    FILE * fp = fopen(locToWrite.c_str(), "wb+");
     if(fp == nullptr){
       std::cout << " Failed to open file " << "\n"; 
       return;   

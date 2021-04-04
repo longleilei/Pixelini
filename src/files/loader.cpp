@@ -27,7 +27,7 @@ size_t Loader::calculateSize( FILE* resource )
 std::unique_ptr<char[]> Loader::openFile(std::string fileName){
 
     
-    std::unique_ptr<FILE, void(*)(FILE*)> res{fopen(fileName.c_str(), "r+"), [](FILE *file) { fclose(file); }}; 
+    std::unique_ptr<FILE, void(*)(FILE*)> res{fopen(fileName.c_str(), "rb+"), [](FILE *file) { fclose(file); }}; 
 
     if (res != nullptr)
      //hello

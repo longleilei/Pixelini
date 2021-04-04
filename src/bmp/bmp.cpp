@@ -1,6 +1,7 @@
 #include <string> 
 #include <iostream>
 #include <memory>
+#include <vector>
 
 #include "files/loader.h" 
 #include "files/writer.h" 
@@ -23,14 +24,30 @@ void BMP::createPixelData(){
 
     //char* colorData = &(buffer.get()[header.image_offset]); 
 
-    for(int i{0}; i < dibHeader.width; i++){ 
-        for(int j{0}; j < dibHeader.height; j+=3){
-            buffer.get()[header.image_offset + j] = 255; 
-            // std::cout << "i: " << i << "j: " << j << " colorData: " 
-            // << colorData[i * dibHeader.width + j] << std::endl;   
-        }
-        
+    std::vector<uint8_t>pixels; 
+
+    std::cout << "before pixels loop" << std::endl; 
+
+    for(int i{0}; i < 3 * dibHeader.width*dibHeader.height; i++){
+        pixels.push_back(buffer.get()[header.image_offset+i]); 
     }
+
+    std::cout << "before 1st loop" << std::endl; 
+
+    for(int i{0}; i < dibHeader.height; i++){ 
+        for(int j{0}; j < dibHeader.width; j++){
+            pixels[3 * (i * dibHeader.width + (j+1)) ] = 0; 
+      
+        }  
+    }
+    std::cout << "buffer loop" << std::endl; 
+
+    for(int i{0}; i < 3 * dibHeader.width*dibHeader.height; i++){
+        buffer.get()[header.image_offset + i] = pixels[i]; 
+    }
+
+    std::cout << "after loop" << std::endl; 
+
     Writer::getInstance().writeToFile("../result.bmp", header.size, std::move(buffer)); 
 
     

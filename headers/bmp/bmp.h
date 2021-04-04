@@ -42,6 +42,5 @@ public:
     BMP(std::string fileName); 
 
     void readHeader(); 
-    //hello
 
 }; 
