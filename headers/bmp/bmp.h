@@ -31,7 +31,8 @@ class BMP {
     
     std::vector<char> blue; 
     std::vector<char> green;
-    std::vector<char> red;   
+    std::vector<char> red;
+
     
     std::unique_ptr<char[]> buffer; 
 
@@ -39,6 +40,7 @@ class BMP {
     void createPixelData(); 
 
 public: 
+    std::vector<uint8_t> pixels;   
     BMP(std::string fileName); 
 
     void readHeader(); 

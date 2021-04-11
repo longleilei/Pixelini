@@ -14,38 +14,20 @@ BMP::BMP(std::string fileName){
 }
 
 void BMP::createPixelData(){
-    const int pixelCount = header.size - 54; 
+      const int pixelCount = header.size - header.image_offset; 
     size_t i{header.image_offset}; 
-    // std::cout << std::hex << static_cast<unsigned int>(buffer.get()[header.image_offset]) << "\n"; 
-    // std::cout << std::hex << static_cast<unsigned int>(buffer.get()[header.image_offset+1]) << "\n"; 
-    // std::cout << std::hex << static_cast<unsigned int>(buffer.get()[header.image_offset+2]) << "\n"; 
-
-    //data[3 * (i * width + j)]
-
-    //char* colorData = &(buffer.get()[header.image_offset]); 
     auto offset = header.image_offset;
     uint32_t channels = dibHeader.bitsperpixel / 8;
-    std::cout << dibHeader.width << std::endl;
-    std::cout << dibHeader.height << std::endl;
-    std::vector<uint8_t> pixels;
-    for (int i{}; i < 3* dibHeader.height * dibHeader.width; i++) {
+    for (int i{}; i < pixelCount; i++) {
         pixels.push_back(buffer.get()[offset + i]);
     }
     for (int i{}; i < dibHeader.height; i++) {
-        for (int j{}; j < dibHeader.width; j++) {
-            pixels[channels * (i * dibHeader.width + j)+2] = 0;
-            pixels[channels * (i * dibHeader.width + j) + 1] = 0;
+        for (int j{}; j < dibHeader.width*channels; j++) {
+            blue.push_back(pixels[channels * (i * dibHeader.width + j)]);
+            green.push_back(pixels[channels * (i * dibHeader.width + j) + 1]);
+            red.push_back(pixels[channels * (i * dibHeader.width + j) + 2]);
         }
     }
-    for (int i{}; i < 3 * dibHeader.height * dibHeader.width; i++) {
-        buffer.get()[offset + i] = pixels[i];
-    }
-
-        std::cout << pixels.size() << " ";
-
-    Writer::getInstance().writeToFile("../assets/result.bmp", header.size, std::move(buffer)); 
-
-    
 }
 
 void BMP::readHeader(){

@@ -4,15 +4,22 @@ project (Pixelini)
 set(CMAKE_CXX_COMPILER clang++)
 
 set(PROJECT_HEADER_DIR ${CMAKE_SOURCE_DIR}/headers)
+set(LIB_DIR ${CMAKE_SOURCE_DIR}/libs)
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -framework Cocoa -framework OpenGL -framework IOKit")
 
-file(GLOB_RECURSE Pixelini_SRC "src/*.cpp")
+file(GLOB_RECURSE Pixelini_SRC src/*.cpp)
 
 file(GLOB_RECURSE APP_HEADERS "${PROJECT_HEADER_DIR}/*.h")
 
-ADD_DEFINITIONS(-Wall -std=c++17 -fexceptions)
+ADD_DEFINITIONS(-Wall -std=c++17 -fexceptions )
 
 ADD_EXECUTABLE(Pixelini ${APP_HEADERS} ${Pixelini_SRC})
 
 target_include_directories(Pixelini PRIVATE ${PROJECT_HEADER_DIR})
 
+find_package(OpenGL REQUIRED)
+
+target_link_libraries(Pixelini ${LIB_DIR}/libglfw3.a)
+
+target_link_libraries(Pixelini OpenGL::GL)
 
