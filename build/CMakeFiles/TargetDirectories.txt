@@ -1,0 +1,3 @@
+/Users/leilei/Desktop/Pixelini/build/CMakeFiles/rebuild_cache.dir
+/Users/leilei/Desktop/Pixelini/build/CMakeFiles/edit_cache.dir
+/Users/leilei/Desktop/Pixelini/build/CMakeFiles/Pixelini.dir
