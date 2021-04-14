@@ -1,6 +1,7 @@
 #include <string> 
 #include <iostream>
 #include <memory>
+#include <vector>
 
 #include "files/loader.h" 
 #include "files/writer.h" 
@@ -13,13 +14,34 @@ BMP::BMP(std::string fileName){
     createPixelData(); 
 }
 
+void BMP::writeImg(int offset, int pixelCount){
+
+    for(int i{}; i < pixelCount; i++){
+        buffer.get()[offset+i] = pixels[i]; 
+    }
+
+    Writer::getInstance().writeToFile("../assets/result.bmp", header.size, buffer);  
+}
+
+std::vector<char> BMP::getBlue(){
+    return blue;    
+}
+std::vector<char> BMP::getGreen(){
+    return green;    
+}
+std::vector<char> BMP::getRed(){
+    return red;    
+}
+
 void BMP::createPixelData(){
     const int pixelCount = header.size - header.image_offset; 
 
     std::cout << "size: " << pixelCount << " w*h: " << (dibHeader.width * dibHeader.height) << std::endl; 
 
     auto offset = header.image_offset;
+
     uint32_t channels = dibHeader.bitsperpixel / 8;
+
     for (int i{}; i < pixelCount; i++) {
         pixels.push_back(buffer.get()[offset + i]);
     }
@@ -31,14 +53,11 @@ void BMP::createPixelData(){
         }
     }
 
-    
-    for(int i{}; i < pixelCount; i++){
-        buffer.get()[offset+i] = pixels[i]; 
-    }
-
-    Writer::getInstance().writeToFile("../assets/result.bmp", header.size, buffer);  
+    writeImg(offset, pixelCount);  
 
 }
+
+
 
 void BMP::readHeader(){
     

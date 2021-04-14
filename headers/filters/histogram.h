@@ -8,9 +8,9 @@ class Histogram{
     std::vector<char>blue; 
     std::vector<char>green; 
     std::vector<char>red; 
-    std::map<char, int>redHist; 
-    std::map<char, int>greenHist; 
-    std::map<char, int>blueHist; 
+    std::map<unsigned char, int>redHist; 
+    std::map<unsigned char, int>greenHist; 
+    std::map<unsigned char, int>blueHist; 
 
     void fillHistogram(); 
 

@@ -27,8 +27,7 @@ int main(){
     
     BMP bmp{name};  
 
-
-    Histogram hist{{'b', 'g', 'g', 'r','r'}, {}, {}}; 
+    Histogram hist{ bmp.getBlue(), bmp.getGreen(), bmp.getRed()}; 
 
 
 

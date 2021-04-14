@@ -43,7 +43,15 @@ public:
     std::vector<uint8_t> pixels;   
     BMP(std::string fileName); 
 
+    std::vector<char> getBlue();
+    std::vector<char> getGreen(); 
+    std::vector<char> getRed();  
+
     void readHeader(); 
+
+    void writeImg(int offset, int pixelCount); 
+
+   
 
 
 

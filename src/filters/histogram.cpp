@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <algorithm> 
 
 #include "filters/histogram.h" 
 
@@ -21,7 +21,48 @@ void Histogram::fillHistogram(){
         blueHist[blue[i]]++; 
     }
 
-    std::cout << blueHist['g'] << std::endl; 
+    for(int i{0}; i < green.size(); i++){
+        greenHist[green[i]]++; 
+    }
+
+    for(int i{0}; i < red.size(); i++){
+        redHist[red[i]]++; 
+    }
+
+
+    for(auto it = blueHist.begin(); it != blueHist.end(); ++it){
+        //std::cout << static_cast<short>(it->first) << " " << "\n";
+        //std::cout << static_cast<short>(it->first) << " " << it->second << " " << "\n";
+    }
+
+    auto minBlue = std::min_element(blueHist.begin(),blueHist.end(), [](std::pair<char, int> first,std::pair<char, int> second ){return first.second < second.second; }); 
+    auto maxBlue = std::min_element(blueHist.begin(),blueHist.end(), [](std::pair<char, int> first,std::pair<char, int> second ){return first.second > second.second; }); 
+
+    float histRatio = 255.0f / (maxBlue->second - minBlue->second ); 
+    std::cout << maxBlue->second << " "<< minBlue->second << " "; 
+
+    for(auto pixel: blue ){
+        pixel -= minBlue->second; 
+        pixel*=histRatio; 
+        std::cout << static_cast<short>(pixel) << " "; 
+    } 
+
+   
+
+
+    
+
+
+        
+        
+    //std::cout << static_cast<short>(minBlue->first) << " " << minBlue->second <<std::endl; 
+    
+    
+
+
+
+
+
 }
 
 
