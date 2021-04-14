@@ -11,6 +11,6 @@ class Writer{
 
 public: 
     static Writer& getInstance(); 
-    void writeToFile(std::string locToWrite, size_t size, std::unique_ptr<char[]> buffer); 
+    void writeToFile(std::string locToWrite, size_t size, const std::unique_ptr<char[]>& buffer); 
 
 }; 

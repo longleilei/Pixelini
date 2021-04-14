@@ -14,8 +14,10 @@ BMP::BMP(std::string fileName){
 }
 
 void BMP::createPixelData(){
-      const int pixelCount = header.size - header.image_offset; 
-    size_t i{header.image_offset}; 
+    const int pixelCount = header.size - header.image_offset; 
+
+    std::cout << "size: " << pixelCount << " w*h: " << (dibHeader.width * dibHeader.height) << std::endl; 
+
     auto offset = header.image_offset;
     uint32_t channels = dibHeader.bitsperpixel / 8;
     for (int i{}; i < pixelCount; i++) {
@@ -28,6 +30,14 @@ void BMP::createPixelData(){
             red.push_back(pixels[channels * (i * dibHeader.width + j) + 2]);
         }
     }
+
+    
+    for(int i{}; i < pixelCount; i++){
+        buffer.get()[offset+i] = pixels[i]; 
+    }
+
+    Writer::getInstance().writeToFile("../assets/result.bmp", header.size, buffer);  
+
 }
 
 void BMP::readHeader(){
