@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../headers/filters/histogram.h
+vector
+-
+map
+-
+
+/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/histogram.cpp
+iostream
+-
+algorithm
+-
+filters/histogram.h
+/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/filters/histogram.h
+
