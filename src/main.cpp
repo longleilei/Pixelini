@@ -3,9 +3,11 @@
 #include <iostream>
 #include "files/exception.h"
 #include "bmp/bmp.h"
+#include "png/png.h"
 #include "filters/histogram.h"
 #include <GLAD/glad.h>
 #include <GLFW/glfw3.h>
+
 
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -28,6 +30,10 @@ int main(){
     BMP bmp{name};  
 
     Histogram hist{ bmp.getBlue(), bmp.getGreen(), bmp.getRed()}; 
+
+    bmp.setColors(hist.getBlue(), hist.getGreen(), hist.getRed()); 
+
+    //PNG png{"lena.png"}; 
 
 
 

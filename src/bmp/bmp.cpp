@@ -8,8 +8,7 @@
 #include "bmp/bmp.h" 
 
 BMP::BMP(std::string fileName){
-    Loader& l = Loader::getInstance();
-    buffer = l.getInstance().openFile(fileName);   
+    buffer = Loader::getInstance().openFile(fileName);   
     readHeader();
     createPixelData(); 
 }
@@ -53,9 +52,38 @@ void BMP::createPixelData(){
         }
     }
 
-    writeImg(offset, pixelCount);  
+    //writeImg(offset, pixelCount);  
 
 }
+
+void BMP::setColors(const std::vector<char>& bl, const std::vector<char>& gr, const std::vector<char>& re){
+
+    const int pixelCount = header.size - header.image_offset; 
+    auto offset = header.image_offset;
+    uint32_t channels = dibHeader.bitsperpixel / 8;
+    
+    blue.clear(); 
+    green.clear(); 
+    red.clear(); 
+
+    std::copy(bl.begin(),bl.end(), std::back_inserter(blue));
+    std::copy(gr.begin(), gr.end(), std::back_inserter(green));
+    std::copy(re.begin(), re.end(), std::back_inserter(red));
+
+    for (int i{}, k{}; i < dibHeader.height; i++) {
+        for (int j{}; j < dibHeader.width*channels; j++) {
+            pixels[channels * (i * dibHeader.width + j)] = blue[k];
+            pixels[channels * (i * dibHeader.width + j) + 1] = green[k];
+            pixels[channels * (i * dibHeader.width + j) + 2] = red[k];
+            k++; 
+        }
+    }
+
+    writeImg(offset, pixelCount);  
+}
+
+
+
 
 
 

@@ -18,5 +18,11 @@ class Histogram{
 public: 
     Histogram(const std::vector<char>& _blue, const std::vector<char>& _green, const std::vector<char>& _red); 
 
+    std::vector<char> getBlue() const;
+    std::vector<char> getGreen() const; 
+    std::vector<char> getRed() const;  
+
+ 
+
 
 }; 
