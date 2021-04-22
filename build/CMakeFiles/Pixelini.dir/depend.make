@@ -33,5 +33,9 @@ CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/files/exception.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/files/loader.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/files/writer.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/filters/histogram.h
+CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/png/png.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../src/main.cpp
+
+CMakeFiles/Pixelini.dir/src/png/png.cpp.o: ../headers/png/png.h
+CMakeFiles/Pixelini.dir/src/png/png.cpp.o: ../src/png/png.cpp
 

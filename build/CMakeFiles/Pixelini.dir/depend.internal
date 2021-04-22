@@ -34,4 +34,8 @@ CMakeFiles/Pixelini.dir/src/main.cpp.o
  ../headers/files/loader.h
  ../headers/files/writer.h
  ../headers/filters/histogram.h
+ ../headers/png/png.h
  /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/main.cpp
+CMakeFiles/Pixelini.dir/src/png/png.cpp.o
+ ../headers/png/png.h
+ /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/png/png.cpp

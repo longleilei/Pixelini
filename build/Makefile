@@ -359,6 +359,33 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/png/png.o: src/png/png.cpp.o
+
+.PHONY : src/png/png.o
+
+# target to build an object file
+src/png/png.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/png/png.cpp.o
+.PHONY : src/png/png.cpp.o
+
+src/png/png.i: src/png/png.cpp.i
+
+.PHONY : src/png/png.i
+
+# target to preprocess a source file
+src/png/png.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/png/png.cpp.i
+.PHONY : src/png/png.cpp.i
+
+src/png/png.s: src/png/png.cpp.s
+
+.PHONY : src/png/png.s
+
+# target to generate assembly for a file
+src/png/png.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/png/png.cpp.s
+.PHONY : src/png/png.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -392,6 +419,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/png/png.o"
+	@echo "... src/png/png.i"
+	@echo "... src/png/png.s"
 .PHONY : help
 
 
