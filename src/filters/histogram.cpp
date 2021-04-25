@@ -1,103 +1,183 @@
 #include <iostream>
-#include <algorithm> 
+#include <algorithm>
+#include <numeric>
+#include <cmath>
 
-#include "filters/histogram.h" 
+#include "filters/histogram.h"
 
-
-Histogram::Histogram(const std::vector<char>& _blue, const std::vector<char>& _green, const std::vector<char>& _red){
-
-    
+Histogram::Histogram(const std::vector<char> &_blue, const std::vector<char> &_green, const std::vector<char> &_red)
+{
 
     std::copy(_blue.begin(), _blue.end(), std::back_inserter(blue));
     std::copy(_green.begin(), _green.end(), std::back_inserter(green));
     std::copy(_red.begin(), _red.end(), std::back_inserter(red));
 
-    fillHistogram(); 
+    fillHistogram();
+    normalizeColorValue(blue, blueHist);
+    normalizeColorValue(green, greenHist);
+    normalizeColorValue(red, redHist);
 }
 
-void Histogram::fillHistogram(){
+void Histogram::normalizeColorValue(std::vector<char> &color, std::map<unsigned char, int> &hist)
+{
 
-    for(int i{0}; i < blue.size(); i++){
-        blueHist[blue[i]]++; 
+    auto numOfPixels{std::accumulate(hist.begin(), hist.end(), 0, [](int val, std::map<unsigned char, int>::value_type &hist) { return val + hist.second; })};
+    constexpr int prediction{7};
+
+    std::vector<double> colorPDF;
+    for (int i{0}; i < hist.size(); i++)
+    {
+        colorPDF.push_back(static_cast<double>(hist[i]) / hist.size());
     }
 
-    for(int i{0}; i < green.size(); i++){
-        greenHist[green[i]]++; 
+    std::vector<double> colorCDF;
+    colorCDF.push_back(colorPDF[0]);
+    for (int i{1}; i < hist.size(); i++)
+    {
+        colorCDF.push_back(colorPDF[i] + colorPDF[i - 1]);
     }
 
-    for(int i{0}; i < red.size(); i++){
-        redHist[red[i]]++; 
-    }
-
-    // for(int i{0}; i < 50; i++){
-    //     std::cout << static_cast<short>(blue[i]) << " ";
-        
+    // for(int i{0}; i < 500; i++){
+    //     std::cout << colorCDF[i] << " ";
     // }
 
-    std::cout << std::endl;  
-
-
-    int numOfPixels{}; 
-    std::unique_ptr<int[]> pdfIntensity(new int[255]); 
-
-    for(auto it = blueHist.begin(); it != blueHist.end(); it++){
-        numOfPixels += it->second; 
-        //std::cout << static_cast<short>(it->first) << " " << it->second << " " << "\n";
+    std::vector<double> colorScale;
+    for (int i{0}; i < hist.size(); i++)
+    {
+        colorScale.push_back(colorCDF[i] * prediction);
     }
 
-  
-    //each intensity value divide by the numOfPixels
-    for(auto it = blueHist.begin(), int i{0}; it != blueHist.end(); it++, i++){
-        pdfIntensity[i] = it->second / numOfPixels; 
+    for (int i{0}; i < 50; i++)
+    {
+        std::cout << static_cast<short>(color[i]) << " ";
     }
 
+    std::cout << std::endl;
 
-    // std::cout << "Num Of Pixels" << numOfPixels <<std::endl; //2359296 
+    for (int i{0}; i < colorScale.size(); i++)
+    {
+        std::replace(color.begin(), color.end(), i, static_cast<int>(round(colorScale[i])));
+    }
 
-
-
-
-
-
-
-
-
-
-
-    // auto minBlue = std::min_element(blueHist.begin(),blueHist.end(), [](std::pair<char, int> first,std::pair<char, int> second ){return first.second < second.second; }); 
-    // auto maxBlue = std::min_element(blueHist.begin(),blueHist.end(), [](std::pair<char, int> first,std::pair<char, int> second ){return first.second > second.second; }); 
-
-    // auto minRed = std::min_element(redHist.begin(),redHist.end(), [](std::pair<char, int> first,std::pair<char, int> second ){return first.second < second.second; }); 
-    // auto maxRed = std::min_element(redHist.begin(),redHist.end(), [](std::pair<char, int> first,std::pair<char, int> second ){return first.second > second.second; }); 
-
-    // auto minGreen = std::min_element(greenHist.begin(),greenHist.end(), [](std::pair<char, int> first,std::pair<char, int> second ){return first.second < second.second; }); 
-    // auto maxGreen = std::min_element(greenHist.begin(),greenHist.end(), [](std::pair<char, int> first,std::pair<char, int> second ){return first.second > second.second; }); 
-
-    // auto scaleBlue = 255.0/((maxBlue->first - minBlue->first ));
-    // auto scaleRed = 255.0/((maxRed->first - minRed->first ));
-    // auto scaleGreen = 255.0/((maxGreen->first - minGreen->first ));
-
-
-    // for (int i{0}; i < blue.size(); i++){
-    //     blue[i] = scaleBlue * (blue[i] - minBlue->first); 
-    // }
-
-    // for (int i{0}; i < red.size(); i++){
-    //     red[i] = scaleRed * (red[i] - minRed->first); 
-    // }
-
-    // for (int i{0}; i < green.size(); i++){
-    //     green[i] = scaleGreen * (green[i] - minGreen->first); 
-    // }
-
-
-
-
+    for (int i{0}; i < 50; i++)
+    {
+        std::cout << static_cast<short>(color[i]) << " ";
+    }
 }
 
-std::vector<char> Histogram::getBlue() const{return blue; }
-std::vector<char> Histogram::getGreen() const{ return green; }
-std::vector<char> Histogram::getRed() const{ return red; }
+void Histogram::fillHistogram()
+{
 
+    for (int i{0}; i < blue.size(); i++)
+    {
+        blueHist[blue[i]]++;
+    }
 
+    for (int i{0}; i < green.size(); i++)
+    {
+        greenHist[green[i]]++;
+    }
 
+    for (int i{0}; i < red.size(); i++)
+    {
+        redHist[red[i]]++;
+    }
+
+    // int calibre{255};
+    // std::vector<double> bluePDF;
+    // for (int i{}; i < blueHist.size(); i++)
+    // {
+    //     bluePDF.push_back(static_cast<double>(blueHist[i]) / blue.size());
+    // }
+    // std::vector<double> blueCDF;
+    // for (int i{}; i < blueHist.size(); i++)
+    // {
+    //     if (i == 0)
+    //     {
+    //         blueCDF.push_back(bluePDF[i]);
+    //         continue;
+    //     }
+    //     blueCDF.push_back(bluePDF[i] + bluePDF[i - 1]);
+    // }
+
+    // std::vector<double> scale{};
+    // for (int i{}; i < blueHist.size(); i++)
+    // {
+    //     scale.push_back(blueCDF[i] * calibre);
+    // }
+
+    // for (int i{}; i < scale.size(); i++)
+    // {
+    //     std::replace(blue.begin(), blue.end(), i, static_cast<int>(round(scale[i])));
+    // }
+
+    // std::vector<double> redPDF;
+    // for (int i{}; i < redHist.size(); i++)
+    // {
+    //     redPDF.push_back(static_cast<double>(redHist[i]) / red.size());
+    // }
+    // std::vector<double> redCDF;
+    // for (int i{}; i < redHist.size(); i++)
+    // {
+    //     if (i == 0)
+    //     {
+    //         redCDF.push_back(redPDF[i]);
+    //         continue;
+    //     }
+    //     redCDF.push_back(redPDF[i] + redPDF[i - 1]);
+    // }
+
+    // std::vector<double> redscale{};
+    // for (int i{}; i < redHist.size(); i++)
+    // {
+    //     redscale.push_back(redCDF[i] * calibre);
+    // }
+
+    // for (int i{}; i < redscale.size(); i++)
+    // {
+    //     std::replace(red.begin(), red.end(), i, static_cast<int>(round(redscale[i])));
+    // }
+
+    // std::vector<double> greenPDF;
+    // for (int i{}; i < greenHist.size(); i++)
+    // {
+    //     greenPDF.push_back(static_cast<double>(greenHist[i]) / green.size());
+    // }
+    // std::vector<double> greenCDF;
+    // for (int i{}; i < greenHist.size(); i++)
+    // {
+    //     if (i == 0)
+    //     {
+    //         greenCDF.push_back(greenPDF[i]);
+    //         continue;
+    //     }
+    //     greenCDF.push_back(greenPDF[i] + redPDF[i - 1]);
+    // }
+
+    // std::vector<double> greenscale{};
+    // for (int i{}; i < greenHist.size(); i++)
+    // {
+    //     greenscale.push_back(greenCDF[i] * calibre);
+    // }
+
+    // for (int i{0}; i < 50; i++)
+    // {
+    //     std::cout << static_cast<short>(green[i]) << " ";
+    // }
+
+    // std::cout << std::endl;
+
+    // for (int i{}; i < greenscale.size(); i++)
+    // {
+    //     std::replace(green.begin(), red.end(), i, static_cast<int>(round(greenscale[i])));
+    // }
+
+    // for (int i{0}; i < 50; i++)
+    // {
+    //     std::cout << static_cast<short>(green[i]) << " ";
+    // }
+}
+
+std::vector<char> Histogram::getBlue() const { return blue; }
+std::vector<char> Histogram::getGreen() const { return green; }
+std::vector<char> Histogram::getRed() const { return red; }

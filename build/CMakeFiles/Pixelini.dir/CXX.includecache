@@ -17,6 +17,10 @@ iostream
 -
 algorithm
 -
+numeric
+-
+cmath
+-
 filters/histogram.h
 /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/filters/histogram.h
 
