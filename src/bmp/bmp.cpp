@@ -14,6 +14,14 @@ BMP::BMP(std::string fileName)
     createPixelData();
 }
 
+unsigned int BMP::getWidth(){
+    return dibHeader.width; 
+} 
+
+unsigned int BMP::getHeight(){
+    return dibHeader.height;
+}
+
 void BMP::writeImg(int offset, int pixelCount)
 {
 

@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Pixelini.dir/src/files/loader.cpp.o"
   "CMakeFiles/Pixelini.dir/src/files/writer.cpp.o"
   "CMakeFiles/Pixelini.dir/src/filters/histogram.cpp.o"
+  "CMakeFiles/Pixelini.dir/src/filters/smoothing.cpp.o"
   "CMakeFiles/Pixelini.dir/src/image/image.cpp.o"
   "CMakeFiles/Pixelini.dir/src/main.cpp.o"
   "CMakeFiles/Pixelini.dir/src/png/png.cpp.o"

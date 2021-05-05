@@ -305,6 +305,33 @@ src/filters/histogram.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/filters/histogram.cpp.s
 .PHONY : src/filters/histogram.cpp.s
 
+src/filters/smoothing.o: src/filters/smoothing.cpp.o
+
+.PHONY : src/filters/smoothing.o
+
+# target to build an object file
+src/filters/smoothing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/filters/smoothing.cpp.o
+.PHONY : src/filters/smoothing.cpp.o
+
+src/filters/smoothing.i: src/filters/smoothing.cpp.i
+
+.PHONY : src/filters/smoothing.i
+
+# target to preprocess a source file
+src/filters/smoothing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/filters/smoothing.cpp.i
+.PHONY : src/filters/smoothing.cpp.i
+
+src/filters/smoothing.s: src/filters/smoothing.cpp.s
+
+.PHONY : src/filters/smoothing.s
+
+# target to generate assembly for a file
+src/filters/smoothing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/filters/smoothing.cpp.s
+.PHONY : src/filters/smoothing.cpp.s
+
 src/image/image.o: src/image/image.cpp.o
 
 .PHONY : src/image/image.o
@@ -413,6 +440,9 @@ help:
 	@echo "... src/filters/histogram.o"
 	@echo "... src/filters/histogram.i"
 	@echo "... src/filters/histogram.s"
+	@echo "... src/filters/smoothing.o"
+	@echo "... src/filters/smoothing.i"
+	@echo "... src/filters/smoothing.s"
 	@echo "... src/image/image.o"
 	@echo "... src/image/image.i"
 	@echo "... src/image/image.s"

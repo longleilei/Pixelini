@@ -23,6 +23,9 @@ CMakeFiles/Pixelini.dir/src/files/writer.cpp.o
 CMakeFiles/Pixelini.dir/src/filters/histogram.cpp.o
  ../headers/filters/histogram.h
  /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/histogram.cpp
+CMakeFiles/Pixelini.dir/src/filters/smoothing.cpp.o
+ ../headers/filters/smoothing.h
+ /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/smoothing.cpp
 CMakeFiles/Pixelini.dir/src/image/image.cpp.o
  /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/image/image.cpp
 CMakeFiles/Pixelini.dir/src/main.cpp.o
@@ -34,6 +37,7 @@ CMakeFiles/Pixelini.dir/src/main.cpp.o
  ../headers/files/loader.h
  ../headers/files/writer.h
  ../headers/filters/histogram.h
+ ../headers/filters/smoothing.h
  ../headers/png/png.h
  /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/main.cpp
 CMakeFiles/Pixelini.dir/src/png/png.cpp.o

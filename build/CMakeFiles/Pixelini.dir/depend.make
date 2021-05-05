@@ -23,6 +23,9 @@ CMakeFiles/Pixelini.dir/src/files/writer.cpp.o: ../src/files/writer.cpp
 CMakeFiles/Pixelini.dir/src/filters/histogram.cpp.o: ../headers/filters/histogram.h
 CMakeFiles/Pixelini.dir/src/filters/histogram.cpp.o: ../src/filters/histogram.cpp
 
+CMakeFiles/Pixelini.dir/src/filters/smoothing.cpp.o: ../headers/filters/smoothing.h
+CMakeFiles/Pixelini.dir/src/filters/smoothing.cpp.o: ../src/filters/smoothing.cpp
+
 CMakeFiles/Pixelini.dir/src/image/image.cpp.o: ../src/image/image.cpp
 
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/GLAD/KHR/khrplatform.h
@@ -33,6 +36,7 @@ CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/files/exception.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/files/loader.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/files/writer.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/filters/histogram.h
+CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/filters/smoothing.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/png/png.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../src/main.cpp
 

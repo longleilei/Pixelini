@@ -5,6 +5,7 @@
 #include "bmp/bmp.h"
 #include "png/png.h"
 #include "filters/histogram.h"
+#include "filters/smoothing.h"
 #include <GLAD/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -20,6 +21,16 @@ const unsigned int SCR_HEIGHT = 600;
 
 int main(){
     std::string name{"../assets/lang.bmp"}; 
+
+    std::vector<int> vec{1,2,3,4,5,6,7,8,9}; 
+
+    //std::cout << vec[1, 1] << " "; 
+    // for(int i{0}; i < 3; i++){
+    //     for(int j{0}; j < 3; j++){
+    //         std::cout << vec[i * 3 + j] << " "; 
+    //     }
+    //     std::cout << std::endl; 
+    // }
     
     try{
              
@@ -29,9 +40,10 @@ int main(){
     
     BMP bmp{name};  
 
-    Histogram hist{ bmp.getBlue(), bmp.getGreen(), bmp.getRed()}; 
+    //Histogram hist{ bmp.getBlue(), bmp.getGreen(), bmp.getRed()}; 
+    Smoothing smooth{ bmp.getBlue(), bmp.getGreen(), bmp.getRed(),  bmp.getWidth(),  bmp.getHeight() }; 
 
-    bmp.setColors(hist.getBlue(), hist.getGreen(), hist.getRed()); 
+    bmp.setColors(smooth.getBlue(), smooth.getGreen(), smooth.getRed()); 
 
     //PNG png{"lena.png"}; 
 

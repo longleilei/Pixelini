@@ -6,21 +6,15 @@
 
 #IncludeRegexTransform: 
 
-../headers/filters/histogram.h
+../headers/filters/smoothing.h
 vector
 -
-map
--
 
-/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/histogram.cpp
+/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/smoothing.cpp
 iostream
 -
-algorithm
--
-numeric
--
+filters/smoothing.h
+/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/filters/smoothing.h
 cmath
 -
-filters/histogram.h
-/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/filters/histogram.h
 

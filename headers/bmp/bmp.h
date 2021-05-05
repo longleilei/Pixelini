@@ -48,4 +48,7 @@ public:
     void writeImg(int offset, int pixelCount);
 
     void setColors(const std::vector<char> &blue, const std::vector<char> &green, const std::vector<char> &red);
+
+    unsigned int getWidth(); 
+    unsigned int getHeight();
 };
