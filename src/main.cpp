@@ -20,7 +20,7 @@ const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
 int main(){
-    std::string name{"../assets/lang.bmp"}; 
+    std::string name{"../assets/lenaa.bmp"}; 
 
     std::vector<int> vec{1,2,3,4,5,6,7,8,9}; 
 
