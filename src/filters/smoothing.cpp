@@ -45,7 +45,7 @@ void Smoothing::doSmoothing(std::vector<char>& colorVec){
         for (int u{1}; u < (wdt-2)*3; u++){
             double sum = 0; 
             for(int j{-1}; j <= 1; j++){
-                for(int i{-1}; i<= 1; i++){
+                for(int i{-1}; i<= 1; i++){ 
                     int p = pushColorVect[((v+j)*wdt+(u+i))];
                     double c = mask[j+1][i+1]; 
                     sum += c * p; 
@@ -87,14 +87,44 @@ void Smoothing::gaussianBlur(std::vector<char>& colorVec){
 
     std::vector<double> pushColorVect;
 
+    size_t pad_rows = (hgt-1)/2; 
+    size_t pad_cols = (wdt-1)/2; 
+
     for(int i{0}; i < colorVec.size(); i++){
         pushColorVect.push_back(colorVec[i]); 
     }
 
+    //create kernel - kernel size = hgt x wdt 
+    char** kernel{nullptr}; 
+    kernel = new char*[hgt*3]{}; 
+
+    for(size_t i{0}; i < hgt*3; i++){
+        kernel[i] = new char[wdt*3]{}; 
+    }
+
+    //K & sigma has to change; we take K=1 and sigma=1
+    //formula is K * exp((s^2 + t^2)/2*sigma^2)
+
+    for(size_t i{0}; i < hgt*3; i++ ){
+        for(size_t j{0}; j< wdt*3; j++){
+            kernel[i][j] = exp((i*i + j*j) / 2.0 );            
+        }
+    }
+
+    for(size_t i{0}; i < 100; i++ ){
+        for(size_t j{0}; j< 100; j++){
+            std::cout << static_cast<short>(kernel[i][j]) << " ";         
+        }
+    }
 
 
-    size_t pad_rows = (hgt-1)/2; 
-    size_t pad_cols = (wdt-1)/2; 
+
+    
+
+
+
+
+    
     //std::vector<std::vector<char>> paddedImg((hgt+(2*pad_rows)) * (wdt+(2*pad_cols))); 
     char** paddedImg{nullptr}; 
     paddedImg = new char*[(hgt+(2*pad_rows))*3]{}; 
@@ -113,12 +143,30 @@ void Smoothing::gaussianBlur(std::vector<char>& colorVec){
         }
     }
 
-    for(size_t i{pad_rows}, k{0}; i < (pad_rows + hgt)*3; i++ ){
-        for(size_t j{pad_cols}; j< (pad_cols + wdt)*3; j++){
-            paddedImg[i][j] += 50; 
-            k++; 
+    //intensify the color
+    // for(size_t i{pad_rows}, k{0}; i < (pad_rows + hgt)*3; i++ ){
+    //     for(size_t j{pad_cols}; j< (pad_cols + wdt)*3; j++){
+    //         paddedImg[i][j] += 50; 
+    //         k++; 
+    //     }
+    // }
+
+    double sum {0}; 
+
+    for(size_t v{pad_rows}; v < (pad_rows + hgt)*3; v++ ){
+        for(size_t u{pad_cols}; u < (pad_cols + wdt)*3; u++){
+            for(int j{-1}; j < hgt-1; j++){
+                for(int i{-1}; i < wdt-1; i++){
+                    int pixel = paddedImg[v+j][u+i];
+                    double kernelVal = kernel[j+1][i+1]; 
+                    sum +=  pixel * kernelVal; 
+                }
+            }
+            paddedImg[v][u] = round(sum); 
         }
     }
+
+
 
     for(size_t i{pad_rows}, k{0}; i < (pad_rows + hgt)*3; i++ ){
         for(size_t j{pad_cols}; j< (pad_cols + wdt)*3; j++){
