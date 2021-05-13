@@ -1,6 +1,7 @@
 #include <iostream>
 #include "filters/smoothing.h" 
-#include <cmath> 
+#include <cmath>
+#include <numeric>
 
 Smoothing::Smoothing(const std::vector<char> &_blue, const std::vector<char> &_green, const std::vector<char> &_red, unsigned int width, unsigned int height ): wdt{width}, hgt{height}{
 
@@ -95,27 +96,31 @@ void Smoothing::gaussianBlur(std::vector<char>& colorVec){
     }
 
     //create kernel - kernel size = hgt x wdt 
-    char** kernel{nullptr}; 
-    kernel = new char*[hgt*3]{}; 
+    double** kernel{nullptr}; 
+    kernel = new double*[11]{}; 
 
-    for(size_t i{0}; i < hgt*3; i++){
-        kernel[i] = new char[wdt*3]{}; 
+    for(size_t i{0}; i < 11; i++){
+        kernel[i] = new double[11]{}; 
     }
 
     //K & sigma has to change; we take K=1 and sigma=1
     //formula is K * exp((s^2 + t^2)/2*sigma^2)
 
-    for(size_t i{0}; i < hgt*3; i++ ){
-        for(size_t j{0}; j< wdt*3; j++){
-            kernel[i][j] = exp((i*i + j*j) / 2.0 );            
+    //std::cout << hgt*3 << " " << wdt*3 << std::endl; 
+    //kernel size is 711 * 705 
+    double sigma{1}; 
+
+    for(size_t i{1}; i < 11; i++ ){
+        for(size_t j{1}; j< 11; j++){
+            kernel[i][j] = std::exp(-(i*i + j*j) /( 2.0 * sigma * sigma) );            
         }
     }
 
-    for(size_t i{0}; i < 100; i++ ){
-        for(size_t j{0}; j< 100; j++){
-            std::cout << static_cast<short>(kernel[i][j]) << " ";         
-        }
-    }
+    // for(size_t i{0}; i < 10; i++ ){
+    //     for(size_t j{0}; j< 10; j++){
+    //         std::cout << kernel[i][j] << " ";         
+    //     }
+    // }
 
 
 
@@ -151,26 +156,43 @@ void Smoothing::gaussianBlur(std::vector<char>& colorVec){
     //     }
     // }
 
-    double sum {0}; 
+    //copy array 
+    char** paddedImgCopy{nullptr}; 
+    paddedImgCopy = new char*[(hgt+(2*pad_rows))*3]{}; 
+
+    for(size_t i{0}; i < (hgt+(2*pad_rows))*3; i++){
+        paddedImgCopy[i] = new char[(wdt+(2*pad_cols))*3]{}; 
+    }
+
+    for(size_t i{0}; i < (hgt+(2*pad_rows))*3; i++ ){
+        for(size_t j{0}; j< (wdt+(2*pad_cols))*3; j++){
+            paddedImgCopy[i][j] = paddedImg[i][j];      
+        }
+    }
+
+   
 
     for(size_t v{pad_rows}; v < (pad_rows + hgt)*3; v++ ){
-        for(size_t u{pad_cols}; u < (pad_cols + wdt)*3; u++){
-            for(int j{-1}; j < hgt-1; j++){
-                for(int i{-1}; i < wdt-1; i++){
-                    int pixel = paddedImg[v+j][u+i];
-                    double kernelVal = kernel[j+1][i+1]; 
-                    sum +=  pixel * kernelVal; 
-                }
-            }
-            paddedImg[v][u] = round(sum); 
+        for(size_t u{pad_cols}; u< (pad_cols + wdt)*3; u++){
+            std::vector<double> matrix; 
+            matrix.push_back(paddedImg[v-1][u-1] * gaussianKernel[0][0]); 
+            matrix.push_back(paddedImg[v-1][u] *   gaussianKernel[0][1]); 
+            matrix.push_back(paddedImg[v-1][u+1] * gaussianKernel[0][2]); 
+            matrix.push_back(paddedImg[v][u-1] *   gaussianKernel[1][0]); 
+            matrix.push_back(paddedImg[v][u] *     gaussianKernel[1][1]); 
+            matrix.push_back(paddedImg[v][u+1] *   gaussianKernel[1][2]); 
+            matrix.push_back(paddedImg[v+1][u-1] * gaussianKernel[2][0]); 
+            matrix.push_back(paddedImg[v+1][u] *   gaussianKernel[2][1]); 
+            matrix.push_back(paddedImg[v+1][u+1] * gaussianKernel[2][2]);
+            double sum = std::accumulate(matrix.begin(), matrix.end(), 0); 
+            paddedImgCopy[v][u] = sum; 
         }
     }
 
 
-
     for(size_t i{pad_rows}, k{0}; i < (pad_rows + hgt)*3; i++ ){
         for(size_t j{pad_cols}; j< (pad_cols + wdt)*3; j++){
-            colorVec[k] = paddedImg[i][j]; 
+            colorVec[k] = paddedImgCopy[i][j]; 
             k++; 
         }
     }

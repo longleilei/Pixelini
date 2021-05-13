@@ -23,6 +23,17 @@ class Smoothing{
         {0.6065, 1, 0.6065}, 
         {0.3679, 0.6065, 0.3679}
     }; 
+    double gaussianKernel2[3][3] = {
+        {0.001, 0.008, 0.001}, 
+        {0.008, 1, 0.008}, 
+        {0.001, 0.008, 0.001}
+    }; 
+    double gaussianKernel3[4][4] = {
+        {1/16, 4/16, 4/16, 1/16}, 
+        {1/16, 4/16, 4/16, 1/16},
+        {1/16, 4/16, 4/16, 1/16}, 
+        {1/16, 4/16, 4/16, 1/16}
+    };
 
     public: 
     Smoothing(const std::vector<char> &_blue, const std::vector<char> &_green, const std::vector<char> &_red, unsigned int width, unsigned int height );
