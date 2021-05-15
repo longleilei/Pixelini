@@ -42,6 +42,7 @@ public:
     std::vector<char> getBlue();
     std::vector<char> getGreen();
     std::vector<char> getRed();
+    
 
     void readHeader();
 
@@ -51,4 +52,5 @@ public:
 
     unsigned int getWidth(); 
     unsigned int getHeight();
+    unsigned int getOffcet(); 
 };

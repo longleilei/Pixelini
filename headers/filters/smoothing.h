@@ -37,6 +37,8 @@ class Smoothing{
 
     public: 
     Smoothing(const std::vector<char> &_blue, const std::vector<char> &_green, const std::vector<char> &_red, unsigned int width, unsigned int height );
+
+    void convertToGrayScale(); 
    
     void doSmoothing(std::vector<char>& colorVec); 
 

@@ -22,6 +22,12 @@ unsigned int BMP::getHeight(){
     return dibHeader.height;
 }
 
+unsigned int BMP::getOffcet(){
+    return header.image_offset; 
+}
+
+
+
 void BMP::writeImg(int offset, int pixelCount)
 {
 
@@ -30,7 +36,7 @@ void BMP::writeImg(int offset, int pixelCount)
         buffer.get()[offset + i] = pixels[i];
     }
 
-    Writer::getInstance().writeToFile("../assets/result.bmp", header.size, buffer);
+    Writer::getInstance().writeToFile("../assets/result1.bmp", header.size, buffer);
 }
 
 std::vector<char> BMP::getBlue()
@@ -60,6 +66,7 @@ void BMP::createPixelData()
     {
         pixels.push_back(buffer.get()[offset + i]);
     }
+
     for (int i{}; i < dibHeader.height; i++)
     {
         for (int j{}; j < dibHeader.width * channels; j++)
