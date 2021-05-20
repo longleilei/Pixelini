@@ -17,9 +17,5 @@ ADD_EXECUTABLE(Pixelini ${APP_HEADERS} ${Pixelini_SRC})
 
 target_include_directories(Pixelini PRIVATE ${PROJECT_HEADER_DIR})
 
-find_package(OpenGL REQUIRED)
 
-target_link_libraries(Pixelini ${LIB_DIR}/libglfw3.a)
-
-target_link_libraries(Pixelini OpenGL::GL)
 

@@ -1,23 +1,22 @@
 
-struct IHDR{
-    unsigned int width; 
-    unsigned int height; 
-    unsigned char bitDepth; 
-    unsigned char colorType; 
-    unsigned char compressionType; 
-    unsigned char filterMethod; 
-    unsigned char interlace; 
+struct IHDR
+{
+    unsigned int width;
+    unsigned int height;
+    unsigned unsigned char bitDepth;
+    unsigned unsigned char colorType;
+    unsigned unsigned char compressionType;
+    unsigned unsigned char filterMethod;
+    unsigned unsigned char interlace;
+};
 
-}; 
+class PNG
+{
 
-class PNG {
+    long long header{};
+    IHDR ihdr{};
+    std::unique_ptr<unsigned char[]> buffer;
 
-    long long header{}; 
-    IHDR ihdr{}; 
-    std::unique_ptr<char[]> buffer; 
-public: 
-    PNG(std::string fileName); 
-
-
-    
-}; 
+public:
+    PNG(std::string fileName);
+};

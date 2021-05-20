@@ -14,19 +14,20 @@ BMP::BMP(std::string fileName)
     createPixelData();
 }
 
-unsigned int BMP::getWidth(){
-    return dibHeader.width; 
-} 
+unsigned int BMP::getWidth()
+{
+    return dibHeader.width;
+}
 
-unsigned int BMP::getHeight(){
+unsigned int BMP::getHeight()
+{
     return dibHeader.height;
 }
 
-unsigned int BMP::getOffcet(){
-    return header.image_offset; 
+unsigned int BMP::getOffcet()
+{
+    return header.image_offset;
 }
-
-
 
 void BMP::writeImg(int offset, int pixelCount)
 {
@@ -39,15 +40,15 @@ void BMP::writeImg(int offset, int pixelCount)
     Writer::getInstance().writeToFile("../assets/result1.bmp", header.size, buffer);
 }
 
-std::vector<char> BMP::getBlue()
+std::vector<unsigned char> BMP::getBlue()
 {
     return blue;
 }
-std::vector<char> BMP::getGreen()
+std::vector<unsigned char> BMP::getGreen()
 {
     return green;
 }
-std::vector<char> BMP::getRed()
+std::vector<unsigned char> BMP::getRed()
 {
     return red;
 }
@@ -80,7 +81,7 @@ void BMP::createPixelData()
     //writeImg(offset, pixelCount);
 }
 
-void BMP::setColors(const std::vector<char> &bl, const std::vector<char> &gr, const std::vector<char> &re)
+void BMP::setColors(const std::vector<unsigned char> &bl, const std::vector<unsigned char> &gr, const std::vector<unsigned char> &re)
 {
 
     const int pixelCount = header.size - header.image_offset;
@@ -112,7 +113,7 @@ void BMP::setColors(const std::vector<char> &bl, const std::vector<char> &gr, co
 void BMP::readHeader()
 {
 
-    std::unique_ptr<char[]> h(new char[14]);
+    std::unique_ptr<unsigned char[]> h(new unsigned char[14]);
 
     for (int i{0}; i < 14; i++)
     {
@@ -128,7 +129,7 @@ void BMP::readHeader()
         std::cout << "change file format";
     }
 
-    std::unique_ptr<char[]> detailed_h(new char[40]);
+    std::unique_ptr<unsigned char[]> detailed_h(new unsigned char[40]);
 
     for (int i{0}, g{14}; i < 40; i++, g++)
     {

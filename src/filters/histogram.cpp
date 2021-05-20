@@ -5,7 +5,7 @@
 
 #include "filters/histogram.h"
 
-Histogram::Histogram(const std::vector<char> &_blue, const std::vector<char> &_green, const std::vector<char> &_red)
+Histogram::Histogram(const std::vector<unsigned char> &_blue, const std::vector<unsigned char> &_green, const std::vector<unsigned char> &_red)
 {
 
     std::copy(_blue.begin(), _blue.end(), std::back_inserter(blue));
@@ -18,10 +18,11 @@ Histogram::Histogram(const std::vector<char> &_blue, const std::vector<char> &_g
     normalizeColorValue(red, redHist);
 }
 
-void Histogram::normalizeColorValue(std::vector<char> &color, std::map<unsigned char, int> &hist)
+void Histogram::normalizeColorValue(std::vector<unsigned char> &color, std::map<unsigned unsigned char, int> &hist)
 {
 
-    auto numOfPixels{std::accumulate(hist.begin(), hist.end(), 0, [](int val, std::map<unsigned char, int>::value_type &hist) { return val + hist.second; })};
+    auto numOfPixels{std::accumulate(hist.begin(), hist.end(), 0, [](int val, std::map<unsigned unsigned char, int>::value_type &hist)
+                                     { return val + hist.second; })};
     constexpr int prediction{7};
 
     std::vector<double> colorPDF;
@@ -178,6 +179,6 @@ void Histogram::fillHistogram()
     // }
 }
 
-std::vector<char> Histogram::getBlue() const { return blue; }
-std::vector<char> Histogram::getGreen() const { return green; }
-std::vector<char> Histogram::getRed() const { return red; }
+std::vector<unsigned char> Histogram::getBlue() const { return blue; }
+std::vector<unsigned char> Histogram::getGreen() const { return green; }
+std::vector<unsigned char> Histogram::getRed() const { return red; }

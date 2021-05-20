@@ -1,19 +1,16 @@
-#pragma once 
+#pragma once
 #include <string>
-#include<stdio.h>
-#include <memory> 
+#include <stdio.h>
+#include <memory>
 
+class Loader
+{
 
-class Loader{
+    Loader();
+    size_t calculateSize(FILE *resource);
 
-    Loader(); 
-    size_t calculateSize(FILE* resource); 
-
-
-public: 
-    static Loader& getInstance(); 
+public:
+    static Loader &getInstance();
     size_t bufferSize{};
-    std::unique_ptr<char[]> openFile(std::string fileName); 
-
-}; 
-
+    std::unique_ptr<unsigned char[]> openFile(std::string fileName);
+};

@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Pixelini.dir/src/GLAD/glad.cpp.o"
   "CMakeFiles/Pixelini.dir/src/bmp/bmp.cpp.o"
   "CMakeFiles/Pixelini.dir/src/files/exception.cpp.o"
   "CMakeFiles/Pixelini.dir/src/files/loader.cpp.o"

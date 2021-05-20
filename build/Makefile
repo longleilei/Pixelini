@@ -143,33 +143,6 @@ Pixelini/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/build
 .PHONY : Pixelini/fast
 
-src/GLAD/glad.o: src/GLAD/glad.cpp.o
-
-.PHONY : src/GLAD/glad.o
-
-# target to build an object file
-src/GLAD/glad.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/GLAD/glad.cpp.o
-.PHONY : src/GLAD/glad.cpp.o
-
-src/GLAD/glad.i: src/GLAD/glad.cpp.i
-
-.PHONY : src/GLAD/glad.i
-
-# target to preprocess a source file
-src/GLAD/glad.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/GLAD/glad.cpp.i
-.PHONY : src/GLAD/glad.cpp.i
-
-src/GLAD/glad.s: src/GLAD/glad.cpp.s
-
-.PHONY : src/GLAD/glad.s
-
-# target to generate assembly for a file
-src/GLAD/glad.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/GLAD/glad.cpp.s
-.PHONY : src/GLAD/glad.cpp.s
-
 src/bmp/bmp.o: src/bmp/bmp.cpp.o
 
 .PHONY : src/bmp/bmp.o
@@ -422,9 +395,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Pixelini"
-	@echo "... src/GLAD/glad.o"
-	@echo "... src/GLAD/glad.i"
-	@echo "... src/GLAD/glad.s"
 	@echo "... src/bmp/bmp.o"
 	@echo "... src/bmp/bmp.i"
 	@echo "... src/bmp/bmp.s"

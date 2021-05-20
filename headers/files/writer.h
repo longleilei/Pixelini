@@ -1,16 +1,14 @@
-#pragma once 
+#pragma once
 #include <string>
-#include<stdio.h>
-#include <memory> 
+#include <stdio.h>
+#include <memory>
 
+class Writer
+{
 
-class Writer{
+    Writer();
 
-    Writer(); 
-    
-
-public: 
-    static Writer& getInstance(); 
-    void writeToFile(std::string locToWrite, size_t size, const std::unique_ptr<char[]>& buffer); 
-
-}; 
+public:
+    static Writer &getInstance();
+    void writeToFile(std::string locToWrite, size_t size, const std::unique_ptr<unsigned char[]> &buffer);
+};

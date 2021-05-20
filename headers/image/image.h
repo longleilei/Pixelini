@@ -1,12 +1,11 @@
 
 // struct RGB {
-//     unsigned char blue; 
-//     unsigned char green; 
-//     unsigned char red; 
-// }; 
+//     unsigned unsigned char blue;
+//     unsigned unsigned char green;
+//     unsigned unsigned char red;
+// };
 
-// class Image { 
-//    //header 
-//    //define file format 
-// }; 
-
+// class Image {
+//    //header
+//    //define file format
+// };

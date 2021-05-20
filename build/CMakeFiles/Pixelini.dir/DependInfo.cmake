@@ -4,7 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/GLAD/glad.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/GLAD/glad.cpp.o"
   "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/bmp/bmp.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/bmp/bmp.cpp.o"
   "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/files/exception.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/files/exception.cpp.o"
   "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/files/loader.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/files/loader.cpp.o"
@@ -20,7 +19,6 @@ set(CMAKE_CXX_COMPILER_ID "AppleClang")
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../headers"
-  "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/OpenGL.framework"
   )
 
 # Targets to which this target links.
