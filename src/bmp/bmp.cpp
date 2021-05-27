@@ -32,12 +32,12 @@ unsigned int BMP::getOffcet()
 void BMP::writeImg(int offset, int pixelCount)
 {
 
-    for (int i{}; i < pixelCount; i++)
+    for (int i{}; i < pixelCount-1; i++)
     {
         buffer.get()[offset + i] = pixels[i];
     }
 
-    Writer::getInstance().writeToFile("../assets/result1.bmp", header.size, buffer);
+    Writer::getInstance().writeToFile("../assets/result2.bmp", header.size, buffer);
 }
 
 std::vector<unsigned char> BMP::getBlue()
@@ -55,7 +55,7 @@ std::vector<unsigned char> BMP::getRed()
 
 void BMP::createPixelData()
 {
-    const int pixelCount = header.size - header.image_offset;
+    const int pixelCount = header.size - header.image_offset-1;
 
     std::cout << "size: " << pixelCount << " w*h: " << (dibHeader.width * dibHeader.height) << std::endl;
 
@@ -68,16 +68,28 @@ void BMP::createPixelData()
         pixels.push_back(buffer.get()[offset + i]);
     }
 
-    for (int i{}; i < dibHeader.height; i++)
-    {
-        for (int j{}; j < dibHeader.width * channels; j++)
-        {
-            blue.push_back(pixels[channels * (i * dibHeader.width + j)]);
-            green.push_back(pixels[channels * (i * dibHeader.width + j) + 1]);
-            red.push_back(pixels[channels * (i * dibHeader.width + j) + 2]);
+    for (int i{}; i < pixelCount-2; i+=dibHeader.width%4) {
+        if (i % (dibHeader.width*3) == 0 && i != 0) {
+            continue;
         }
+        for (int j{}; j < dibHeader.width && i < pixelCount - 2; j++, i+=3) {
+            blue.push_back(pixels[i]);
+            green.push_back(pixels[i + 1]);
+            red.push_back(pixels[i + 2]);
+        }
+        
     }
 
+ /*   for (int i{}; i < dibHeader.height*3; i+=dibHeader.width%4*2)
+    {
+        for (int j{i*2}; j < channels*(dibHeader.width+(i*2)); j+=3)
+        {
+            blue.push_back(pixels[j]);
+            green.push_back(pixels[j +1 ]);
+            red.push_back(pixels[j+2]);
+            
+        }
+    }*/
     //writeImg(offset, pixelCount);
 }
 
@@ -96,16 +108,28 @@ void BMP::setColors(const std::vector<unsigned char> &bl, const std::vector<unsi
     std::copy(gr.begin(), gr.end(), std::back_inserter(green));
     std::copy(re.begin(), re.end(), std::back_inserter(red));
 
-    for (int i{}, k{}; i < dibHeader.height; i++)
-    {
-        for (int j{}; j < dibHeader.width * channels; j++)
-        {
-            pixels[channels * (i * dibHeader.width + j)] = blue[k];
-            pixels[channels * (i * dibHeader.width + j) + 1] = green[k];
-            pixels[channels * (i * dibHeader.width + j) + 2] = red[k];
+    for (int i{}, k{}; i < pixelCount-2; i += dibHeader.width % 4) {
+        if (i % (dibHeader.width * 3) == 0 && i != 0) {
+            continue;
+        }
+        for (int j{}; j < dibHeader.width && i < pixelCount - 3; j++, i += 3) {
+            pixels[i] = blue[k];
+            pixels[i + 1] = green[k];
+            pixels[i + 2] = red[k];
             k++;
         }
+
     }
+    //for (int i{}, k{}; i < dibHeader.height-2; i++)
+    //{
+    //    for (int j{}; j < dibHeader.width * channels; j++)
+    //    {
+    //        pixels[channels * (i * dibHeader.width + j)] = blue[k];
+    //        pixels[channels * (i * dibHeader.width + j) + 1] = green[k];
+    //        pixels[channels * (i * dibHeader.width + j) + 2] = red[k];
+    //        k++;
+    //    }
+    //}
 
     writeImg(offset, pixelCount);
 }

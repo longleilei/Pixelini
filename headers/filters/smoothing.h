@@ -4,9 +4,9 @@
 class Smoothing
 {
 
-    std::vector<unsigned unsigned char> blue;
-    std::vector<unsigned unsigned char> green;
-    std::vector<unsigned unsigned char> red;
+    std::vector<unsigned char> blue;
+    std::vector<unsigned char> green;
+    std::vector<unsigned char> red;
     unsigned int wdt;
     unsigned int hgt;
 
@@ -30,7 +30,7 @@ class Smoothing
         {1 / 16, 4 / 16, 4 / 16, 1 / 16}};
 
 public:
-    Smoothing(const std::vector<unsigned unsigned char> &_blue, const std::vector<unsigned unsigned char> &_green, const std::vector<unsigned unsigned char> &_red, unsigned int width, unsigned int height);
+    Smoothing(const std::vector<unsigned char> &_blue, const std::vector<unsigned char> &_green, const std::vector<unsigned char> &_red, unsigned int width, unsigned int height);
 
     void convertToGrayScale();
 
@@ -39,7 +39,7 @@ public:
     void gaussianBlur(std::vector<unsigned unsigned char> &colorVec);
     double **createKernel(double **input, int size);
 
-    std::vector<unsigned unsigned char> getBlue() const;
-    std::vector<unsigned unsigned char> getGreen() const;
-    std::vector<unsigned unsigned char> getRed() const;
+    std::vector<unsigned char> getBlue() const;
+    std::vector<unsigned char> getGreen() const;
+    std::vector<unsigned char> getRed() const;
 };
