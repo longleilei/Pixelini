@@ -16,11 +16,24 @@ CMakeFiles/Pixelini.dir/src/files/loader.cpp.o: ../src/files/loader.cpp
 CMakeFiles/Pixelini.dir/src/files/writer.cpp.o: ../headers/files/writer.h
 CMakeFiles/Pixelini.dir/src/files/writer.cpp.o: ../src/files/writer.cpp
 
+CMakeFiles/Pixelini.dir/src/filters/filter.cpp.o: ../headers/filters/filter.h
+CMakeFiles/Pixelini.dir/src/filters/filter.cpp.o: ../src/filters/filter.cpp
+
+CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.o: ../headers/filters/filter.h
+CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.o: ../headers/filters/grayScale.h
+CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.o: ../src/filters/grayScale.cpp
+
+CMakeFiles/Pixelini.dir/src/filters/histogram.cpp.o: ../headers/filters/filter.h
 CMakeFiles/Pixelini.dir/src/filters/histogram.cpp.o: ../headers/filters/histogram.h
 CMakeFiles/Pixelini.dir/src/filters/histogram.cpp.o: ../src/filters/histogram.cpp
 
+CMakeFiles/Pixelini.dir/src/filters/smoothing.cpp.o: ../headers/filters/filter.h
 CMakeFiles/Pixelini.dir/src/filters/smoothing.cpp.o: ../headers/filters/smoothing.h
 CMakeFiles/Pixelini.dir/src/filters/smoothing.cpp.o: ../src/filters/smoothing.cpp
+
+CMakeFiles/Pixelini.dir/src/filters/sobel.cpp.o: ../headers/filters/filter.h
+CMakeFiles/Pixelini.dir/src/filters/sobel.cpp.o: ../headers/filters/sobel.h
+CMakeFiles/Pixelini.dir/src/filters/sobel.cpp.o: ../src/filters/sobel.cpp
 
 CMakeFiles/Pixelini.dir/src/image/image.cpp.o: ../src/image/image.cpp
 
@@ -28,8 +41,11 @@ CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/bmp/bmp.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/files/exception.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/files/loader.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/files/writer.h
+CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/filters/filter.h
+CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/filters/grayScale.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/filters/histogram.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/filters/smoothing.h
+CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/filters/sobel.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../src/main.cpp
 
 CMakeFiles/Pixelini.dir/src/png/png.cpp.o: ../headers/png/png.h

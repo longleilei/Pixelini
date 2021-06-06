@@ -6,19 +6,39 @@
 
 #IncludeRegexTransform: 
 
-../headers/filters/smoothing.h
+../headers/bmp/bmp.h
 vector
 -
 
-/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/smoothing.cpp
+../headers/files/loader.h
+string
+-
+stdio.h
+-
+memory
+-
+
+../headers/files/writer.h
+string
+-
+stdio.h
+-
+memory
+-
+
+/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/bmp/bmp.cpp
+string
+-
 iostream
 -
-filters/smoothing.h
-/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/filters/smoothing.h
-cmath
+memory
 -
-numeric
+vector
 -
-iomanip
--
+files/loader.h
+/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/bmp/files/loader.h
+files/writer.h
+/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/bmp/files/writer.h
+bmp/bmp.h
+/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/bmp/bmp/bmp.h
 

@@ -1,20 +1,14 @@
 #pragma once 
 #include <vector>
+#include "filters/filter.h"
 
-class GrayScale{
+class GrayScale : public Filter{
 
-    std::vector<unsigned char> blue;
-    std::vector<unsigned char> green;
-    std::vector<unsigned char> red;
 
 public:
 
-    GrayScale(const std::vector<unsigned char> &_blue, const std::vector<unsigned char> &_green);
-
+    GrayScale(const std::vector<unsigned char> &_blue, const std::vector<unsigned char> &_green, 
+    const std::vector<unsigned char> &_red, unsigned int width, unsigned int height);
     void convertToGrayScale();
-
-    std::vector<unsigned char> getBlue() const;
-    std::vector<unsigned char> getGreen() const;
-    std::vector<unsigned char> getRed() const;
 
 }; 

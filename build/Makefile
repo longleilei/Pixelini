@@ -251,6 +251,60 @@ src/files/writer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/files/writer.cpp.s
 .PHONY : src/files/writer.cpp.s
 
+src/filters/filter.o: src/filters/filter.cpp.o
+
+.PHONY : src/filters/filter.o
+
+# target to build an object file
+src/filters/filter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/filters/filter.cpp.o
+.PHONY : src/filters/filter.cpp.o
+
+src/filters/filter.i: src/filters/filter.cpp.i
+
+.PHONY : src/filters/filter.i
+
+# target to preprocess a source file
+src/filters/filter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/filters/filter.cpp.i
+.PHONY : src/filters/filter.cpp.i
+
+src/filters/filter.s: src/filters/filter.cpp.s
+
+.PHONY : src/filters/filter.s
+
+# target to generate assembly for a file
+src/filters/filter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/filters/filter.cpp.s
+.PHONY : src/filters/filter.cpp.s
+
+src/filters/grayScale.o: src/filters/grayScale.cpp.o
+
+.PHONY : src/filters/grayScale.o
+
+# target to build an object file
+src/filters/grayScale.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.o
+.PHONY : src/filters/grayScale.cpp.o
+
+src/filters/grayScale.i: src/filters/grayScale.cpp.i
+
+.PHONY : src/filters/grayScale.i
+
+# target to preprocess a source file
+src/filters/grayScale.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.i
+.PHONY : src/filters/grayScale.cpp.i
+
+src/filters/grayScale.s: src/filters/grayScale.cpp.s
+
+.PHONY : src/filters/grayScale.s
+
+# target to generate assembly for a file
+src/filters/grayScale.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.s
+.PHONY : src/filters/grayScale.cpp.s
+
 src/filters/histogram.o: src/filters/histogram.cpp.o
 
 .PHONY : src/filters/histogram.o
@@ -304,6 +358,33 @@ src/filters/smoothing.s: src/filters/smoothing.cpp.s
 src/filters/smoothing.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/filters/smoothing.cpp.s
 .PHONY : src/filters/smoothing.cpp.s
+
+src/filters/sobel.o: src/filters/sobel.cpp.o
+
+.PHONY : src/filters/sobel.o
+
+# target to build an object file
+src/filters/sobel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/filters/sobel.cpp.o
+.PHONY : src/filters/sobel.cpp.o
+
+src/filters/sobel.i: src/filters/sobel.cpp.i
+
+.PHONY : src/filters/sobel.i
+
+# target to preprocess a source file
+src/filters/sobel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/filters/sobel.cpp.i
+.PHONY : src/filters/sobel.cpp.i
+
+src/filters/sobel.s: src/filters/sobel.cpp.s
+
+.PHONY : src/filters/sobel.s
+
+# target to generate assembly for a file
+src/filters/sobel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/filters/sobel.cpp.s
+.PHONY : src/filters/sobel.cpp.s
 
 src/image/image.o: src/image/image.cpp.o
 
@@ -407,12 +488,21 @@ help:
 	@echo "... src/files/writer.o"
 	@echo "... src/files/writer.i"
 	@echo "... src/files/writer.s"
+	@echo "... src/filters/filter.o"
+	@echo "... src/filters/filter.i"
+	@echo "... src/filters/filter.s"
+	@echo "... src/filters/grayScale.o"
+	@echo "... src/filters/grayScale.i"
+	@echo "... src/filters/grayScale.s"
 	@echo "... src/filters/histogram.o"
 	@echo "... src/filters/histogram.i"
 	@echo "... src/filters/histogram.s"
 	@echo "... src/filters/smoothing.o"
 	@echo "... src/filters/smoothing.i"
 	@echo "... src/filters/smoothing.s"
+	@echo "... src/filters/sobel.o"
+	@echo "... src/filters/sobel.i"
+	@echo "... src/filters/sobel.s"
 	@echo "... src/image/image.o"
 	@echo "... src/image/image.i"
 	@echo "... src/image/image.s"

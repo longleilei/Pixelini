@@ -16,12 +16,25 @@ CMakeFiles/Pixelini.dir/src/files/loader.cpp.o
 CMakeFiles/Pixelini.dir/src/files/writer.cpp.o
  ../headers/files/writer.h
  /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/files/writer.cpp
+CMakeFiles/Pixelini.dir/src/filters/filter.cpp.o
+ ../headers/filters/filter.h
+ /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/filter.cpp
+CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.o
+ ../headers/filters/filter.h
+ ../headers/filters/grayScale.h
+ /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/grayScale.cpp
 CMakeFiles/Pixelini.dir/src/filters/histogram.cpp.o
+ ../headers/filters/filter.h
  ../headers/filters/histogram.h
  /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/histogram.cpp
 CMakeFiles/Pixelini.dir/src/filters/smoothing.cpp.o
+ ../headers/filters/filter.h
  ../headers/filters/smoothing.h
  /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/smoothing.cpp
+CMakeFiles/Pixelini.dir/src/filters/sobel.cpp.o
+ ../headers/filters/filter.h
+ ../headers/filters/sobel.h
+ /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/sobel.cpp
 CMakeFiles/Pixelini.dir/src/image/image.cpp.o
  /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/image/image.cpp
 CMakeFiles/Pixelini.dir/src/main.cpp.o
@@ -29,8 +42,11 @@ CMakeFiles/Pixelini.dir/src/main.cpp.o
  ../headers/files/exception.h
  ../headers/files/loader.h
  ../headers/files/writer.h
+ ../headers/filters/filter.h
+ ../headers/filters/grayScale.h
  ../headers/filters/histogram.h
  ../headers/filters/smoothing.h
+ ../headers/filters/sobel.h
  /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/main.cpp
 CMakeFiles/Pixelini.dir/src/png/png.cpp.o
  ../headers/png/png.h

@@ -1,15 +1,9 @@
 #pragma once
 #include <vector>
+#include "filters/filter.h"
 
-class Smoothing
-{
-
-    std::vector<unsigned char> blue;
-    std::vector<unsigned char> green;
-    std::vector<unsigned char> red;
-    unsigned int wdt;
-    unsigned int hgt;
-
+class Smoothing: public Filter
+{    
     double mask[3][3] = {
         {0.075, 0.125, 0.075},
         {0.125, 0.20, 0.125},
@@ -39,7 +33,4 @@ public:
     void gaussianBlur(std::vector<unsigned unsigned char> &colorVec);
     double **createKernel(double **input, int size);
 
-    std::vector<unsigned char> getBlue() const;
-    std::vector<unsigned char> getGreen() const;
-    std::vector<unsigned char> getRed() const;
 };

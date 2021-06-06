@@ -4,13 +4,9 @@
 #include <numeric>
 #include <iomanip>
 
-Smoothing::Smoothing(const std::vector<unsigned char> &_blue, const std::vector<unsigned char> &_green, const std::vector<unsigned char> &_red, unsigned int width, unsigned int height ): wdt{width}, hgt{height}{
+Smoothing::Smoothing(const std::vector<unsigned char> &_blue, const std::vector<unsigned char> &_green, 
+const std::vector<unsigned char> &_red, unsigned int width, unsigned int height ): Filter{_blue, _green, _red, width, height}{
 
-
-    std::copy(_blue.begin(), _blue.end(), std::back_inserter(blue));
-    std::copy(_green.begin(), _green.end(), std::back_inserter(green));
-    std::copy(_red.begin(), _red.end(), std::back_inserter(red));
-    std::cout << "width: " << wdt << " heidht: " <<hgt << "\n";
 
     // doSmoothing(blue); 
     // doSmoothing(green); 
@@ -21,11 +17,12 @@ Smoothing::Smoothing(const std::vector<unsigned char> &_blue, const std::vector<
     gaussianBlur(red);
 }
 
+//creating kenrel for smoothing 
 double** Smoothing::createKernel(double **input, int size){
     double sigma = 1;
     int W = size;
     double mean = W / 2;
-    double sum = 0.0; // For accumulating the kernel values
+    double sum = 0.0;
     input = new double*[size]{}; 
     for(size_t i{0}; i < size; i++){
         input[i] = new double[size]{}; 
@@ -44,7 +41,7 @@ double** Smoothing::createKernel(double **input, int size){
 }
 
 
-
+// predefined filter 
 void Smoothing::doSmoothing(std::vector<unsigned char>& colorVec){
     
     std::vector<double> pushColorVect;
@@ -71,23 +68,19 @@ void Smoothing::doSmoothing(std::vector<unsigned char>& colorVec){
 
 void Smoothing::gaussianBlur(std::vector<unsigned char>& colorVec){
 
-
+    //calculate padding size and kernel size 
     size_t pad_rows = (hgt)/2+1; 
     size_t pad_cols = (wdt)/2+1; 
-
     constexpr int kernelDim{3}; 
 
-    // for(int i{0}; i < colorVec.size(); i++){
-    //    std::cout<< "colorVec[i]:" << (short) colorVec[i] << " "; 
-    // }
     
     double **gusM;
     gusM = createKernel(gusM, kernelDim);
    
+
+    //create padded matrix
     std::vector<unsigned char> tmp1((wdt + (2 * pad_cols)), 0);
     std::vector<std::vector<unsigned char>> paddedImg((hgt + (2 * pad_rows)), tmp1);
-
-    
 
     for(size_t i{pad_rows}, k{0}; i < (pad_rows + hgt); i++ ){
         for(size_t j{pad_cols}; j< (pad_cols + wdt); j++){
@@ -97,7 +90,7 @@ void Smoothing::gaussianBlur(std::vector<unsigned char>& colorVec){
     }
 
 
-
+    //create copy of padded matrix
     std::vector<unsigned char> tmp((wdt + (2 * pad_cols)), 0);
     std::vector<std::vector<unsigned char>> paddedImgCopy((hgt + (2 * pad_rows)), tmp);
 
@@ -107,17 +100,6 @@ void Smoothing::gaussianBlur(std::vector<unsigned char>& colorVec){
             paddedImgCopy[i][j] = paddedImg[i][j];      
         }
     }
-
-    // std::cout << "Before" << std::endl;
-    // for(size_t i{0}; i < (2*pad_rows + hgt); i++ ){
-    //     for(size_t j{0}; j< (2*pad_cols + wdt); j++){
-    //         std::cout<< std::setw(2) <<  static_cast<short>(paddedImgCopy[i][j]) << " ";               
-    //     }
-    //     std::cout<< std::endl; 
-    // }
-
-    // std::cout<< std::endl;
-
     
 
 
@@ -127,29 +109,17 @@ void Smoothing::gaussianBlur(std::vector<unsigned char>& colorVec){
             for(int x{-1}; x < kernelDim-1; x++){
                 for(int y{-1}; y < kernelDim-1; y++){
                     matrix.push_back(static_cast<double>(paddedImgCopy[v+x][u+y]) * gusM[x+1][y+1]); 
-                    //std::cout << "v= " << v << " u= " << u << " x= " << x << " y= " << y << " v+x = " << v+x << " u+y= " << u+y <<std::endl; 
                 }
             } 
             double sum{0};    
             for(auto x: matrix){
                 sum+=x;
             }
-            //std::cout << "sum/9" << sum/9 << std::endl;
             paddedImgCopy[v][u] = std::round(sum); 
 
         }
 
     }
-
-    // std::cout << "After" << std::endl; 
-
-    // for(size_t i{0}; i < (2*pad_rows + hgt); i++ ){
-    //     for(size_t j{0}; j< (2*pad_cols + wdt); j++){
-    //         std::cout<< std::setw(2) <<  static_cast<short>(paddedImgCopy[i][j]) << " ";               
-    //     }
-    //     std::cout<< std::endl; 
-    // }
-
 
     for(size_t i{pad_rows}, k{0}; i < (pad_rows + hgt); i++ ){
         for(size_t j{pad_cols}; j< (pad_cols + wdt); j++){
@@ -165,8 +135,3 @@ void Smoothing::gaussianBlur(std::vector<unsigned char>& colorVec){
 
 }; 
 
-
-
-std::vector<unsigned char> Smoothing::getBlue() const { return blue; }
-std::vector<unsigned char> Smoothing::getGreen() const { return green; }
-std::vector<unsigned char> Smoothing::getRed() const { return red; }

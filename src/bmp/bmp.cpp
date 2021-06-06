@@ -63,10 +63,15 @@ void BMP::createPixelData()
 
     uint32_t channels = dibHeader.bitsperpixel / 8;
 
+   std::cout << "creating pixel vector" << std::endl; 
+
     for (int i{}; i < pixelCount; i++)
     {
         pixels.push_back(buffer.get()[offset + i]);
     }
+
+    std::cout << "creating color vectors" << std::endl; 
+
 
     for (int i{}; i < pixelCount-2; i+=dibHeader.width%4) {
         if (i % (dibHeader.width*3) == 0 && i != 0) {
@@ -79,6 +84,8 @@ void BMP::createPixelData()
         }
         
     }
+
+    std::cout << "finish creating color vectors" << std::endl; 
 
  /*   for (int i{}; i < dibHeader.height*3; i+=dibHeader.width%4*2)
     {

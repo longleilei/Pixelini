@@ -3,8 +3,11 @@
 #include <iostream>
 #include "files/exception.h"
 #include "bmp/bmp.h"
+#include "filters/filter.h"
 #include "filters/histogram.h"
 #include "filters/smoothing.h"
+#include "filters/grayScale.h"
+#include "filters/sobel.h"
 
 
 int main(){
@@ -17,8 +20,15 @@ int main(){
 
     BMP bmp{name};  
 
-    //Histogram hist{ bmp.getBlue(), bmp.getGreen(), bmp.getRed()}; 
-    Smoothing smooth{ bmp.getBlue(), bmp.getGreen(), bmp.getRed(),  bmp.getWidth(),  bmp.getHeight() }; 
+    std::cout << "GrayScale begin" << std::endl; 
 
-    bmp.setColors(smooth.getBlue(), smooth.getGreen(), smooth.getRed()); 
+    //Histogram hist{ bmp.getBlue(), bmp.getGreen(), bmp.getRed()}; 
+    GrayScale gray{ bmp.getBlue(), bmp.getGreen(), bmp.getRed(), bmp.getWidth(),  bmp.getHeight() }; 
+
+    std::cout << "GrayScale end" << std::endl; 
+ 
+    //Smoothing smooth{ gray.getBlue(), gray.getGreen(), gray.getRed(),  bmp.getWidth(),  bmp.getHeight() }; 
+    Sobel sobel{gray.getBlue(), gray.getGreen(), gray.getRed(),  bmp.getWidth(),  bmp.getHeight()}; 
+
+    bmp.setColors(sobel.getBlue(), sobel.getGreen(), sobel.getRed()); 
 }
