@@ -16,6 +16,12 @@ CMakeFiles/Pixelini.dir/src/files/loader.cpp.o: ../src/files/loader.cpp
 CMakeFiles/Pixelini.dir/src/files/writer.cpp.o: ../headers/files/writer.h
 CMakeFiles/Pixelini.dir/src/files/writer.cpp.o: ../src/files/writer.cpp
 
+CMakeFiles/Pixelini.dir/src/filters/canny.cpp.o: ../headers/filters/canny.h
+CMakeFiles/Pixelini.dir/src/filters/canny.cpp.o: ../headers/filters/filter.h
+CMakeFiles/Pixelini.dir/src/filters/canny.cpp.o: ../headers/filters/smoothing.h
+CMakeFiles/Pixelini.dir/src/filters/canny.cpp.o: ../headers/filters/sobel.h
+CMakeFiles/Pixelini.dir/src/filters/canny.cpp.o: ../src/filters/canny.cpp
+
 CMakeFiles/Pixelini.dir/src/filters/filter.cpp.o: ../headers/filters/filter.h
 CMakeFiles/Pixelini.dir/src/filters/filter.cpp.o: ../src/filters/filter.cpp
 
@@ -41,6 +47,7 @@ CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/bmp/bmp.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/files/exception.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/files/loader.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/files/writer.h
+CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/filters/canny.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/filters/filter.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/filters/grayScale.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/filters/histogram.h

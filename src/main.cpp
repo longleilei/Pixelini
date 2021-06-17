@@ -8,6 +8,7 @@
 #include "filters/smoothing.h"
 #include "filters/grayScale.h"
 #include "filters/sobel.h"
+#include "filters/canny.h"
 
 
 int main(){
@@ -28,7 +29,17 @@ int main(){
     std::cout << "GrayScale end" << std::endl; 
  
     //Smoothing smooth{ gray.getBlue(), gray.getGreen(), gray.getRed(),  bmp.getWidth(),  bmp.getHeight() }; 
-    Sobel sobel{gray.getBlue(), gray.getGreen(), gray.getRed(),  bmp.getWidth(),  bmp.getHeight()}; 
+    // Sobel sobel{gray.getBlue(), gray.getGreen(), gray.getRed(),  bmp.getWidth(),  bmp.getHeight()}; 
+    // auto grad{sobel.createGradMatrix()}; 
 
-    bmp.setColors(sobel.getBlue(), sobel.getGreen(), sobel.getRed()); 
+    // for(const auto& i: grad){
+    //     for(const auto& j: i){
+    //         std::cout << "j= " << j << "\n"; 
+    //     }
+    // }
+
+
+    Canny canny{gray.getBlue(), gray.getGreen(), gray.getRed(),  bmp.getWidth(),  bmp.getHeight()};
+
+    //bmp.setColors(sobel.getBlue(), sobel.getGreen(), sobel.getRed()); 
 }

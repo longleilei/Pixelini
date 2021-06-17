@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/files/exception.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/files/exception.cpp.o"
   "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/files/loader.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/files/loader.cpp.o"
   "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/files/writer.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/files/writer.cpp.o"
+  "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/canny.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/filters/canny.cpp.o"
   "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/filter.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/filters/filter.cpp.o"
   "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/grayScale.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.o"
   "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/histogram.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/filters/histogram.cpp.o"

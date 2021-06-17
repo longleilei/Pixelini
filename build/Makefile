@@ -251,6 +251,33 @@ src/files/writer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/files/writer.cpp.s
 .PHONY : src/files/writer.cpp.s
 
+src/filters/canny.o: src/filters/canny.cpp.o
+
+.PHONY : src/filters/canny.o
+
+# target to build an object file
+src/filters/canny.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/filters/canny.cpp.o
+.PHONY : src/filters/canny.cpp.o
+
+src/filters/canny.i: src/filters/canny.cpp.i
+
+.PHONY : src/filters/canny.i
+
+# target to preprocess a source file
+src/filters/canny.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/filters/canny.cpp.i
+.PHONY : src/filters/canny.cpp.i
+
+src/filters/canny.s: src/filters/canny.cpp.s
+
+.PHONY : src/filters/canny.s
+
+# target to generate assembly for a file
+src/filters/canny.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/filters/canny.cpp.s
+.PHONY : src/filters/canny.cpp.s
+
 src/filters/filter.o: src/filters/filter.cpp.o
 
 .PHONY : src/filters/filter.o
@@ -488,6 +515,9 @@ help:
 	@echo "... src/files/writer.o"
 	@echo "... src/files/writer.i"
 	@echo "... src/files/writer.s"
+	@echo "... src/filters/canny.o"
+	@echo "... src/filters/canny.i"
+	@echo "... src/filters/canny.s"
 	@echo "... src/filters/filter.o"
 	@echo "... src/filters/filter.i"
 	@echo "... src/filters/filter.s"

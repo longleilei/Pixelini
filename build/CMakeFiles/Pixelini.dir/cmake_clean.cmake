@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Pixelini.dir/src/files/exception.cpp.o"
   "CMakeFiles/Pixelini.dir/src/files/loader.cpp.o"
   "CMakeFiles/Pixelini.dir/src/files/writer.cpp.o"
+  "CMakeFiles/Pixelini.dir/src/filters/canny.cpp.o"
   "CMakeFiles/Pixelini.dir/src/filters/filter.cpp.o"
   "CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.o"
   "CMakeFiles/Pixelini.dir/src/filters/histogram.cpp.o"

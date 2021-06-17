@@ -6,39 +6,41 @@
 
 #IncludeRegexTransform: 
 
-../headers/bmp/bmp.h
+../headers/filters/canny.h
+vector
+-
+filters/filter.h
+../headers/filters/filters/filter.h
+
+../headers/filters/filter.h
 vector
 -
 
-../headers/files/loader.h
-string
+../headers/filters/smoothing.h
+vector
 -
-stdio.h
--
-memory
--
+filters/filter.h
+../headers/filters/filters/filter.h
 
-../headers/files/writer.h
-string
+../headers/filters/sobel.h
+vector
 -
-stdio.h
--
-memory
--
+filters/filter.h
+../headers/filters/filters/filter.h
 
-/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/bmp/bmp.cpp
-string
--
+/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/canny.cpp
 iostream
 -
-memory
+filters/canny.h
+/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/filters/canny.h
+filters/smoothing.h
+/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/filters/smoothing.h
+filters/sobel.h
+/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/filters/sobel.h
+cmath
 -
-vector
+numeric
 -
-files/loader.h
-/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/bmp/files/loader.h
-files/writer.h
-/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/bmp/files/writer.h
-bmp/bmp.h
-/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/bmp/bmp/bmp.h
+iomanip
+-
 

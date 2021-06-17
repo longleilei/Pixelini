@@ -16,6 +16,12 @@ CMakeFiles/Pixelini.dir/src/files/loader.cpp.o
 CMakeFiles/Pixelini.dir/src/files/writer.cpp.o
  ../headers/files/writer.h
  /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/files/writer.cpp
+CMakeFiles/Pixelini.dir/src/filters/canny.cpp.o
+ ../headers/filters/canny.h
+ ../headers/filters/filter.h
+ ../headers/filters/smoothing.h
+ ../headers/filters/sobel.h
+ /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/canny.cpp
 CMakeFiles/Pixelini.dir/src/filters/filter.cpp.o
  ../headers/filters/filter.h
  /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/filter.cpp
@@ -42,6 +48,7 @@ CMakeFiles/Pixelini.dir/src/main.cpp.o
  ../headers/files/exception.h
  ../headers/files/loader.h
  ../headers/files/writer.h
+ ../headers/filters/canny.h
  ../headers/filters/filter.h
  ../headers/filters/grayScale.h
  ../headers/filters/histogram.h

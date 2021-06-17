@@ -74,9 +74,6 @@ void BMP::createPixelData()
 
 
     for (int i{}; i < pixelCount-2; i+=dibHeader.width%4) {
-        if (i % (dibHeader.width*3) == 0 && i != 0) {
-            continue;
-        }
         for (int j{}; j < dibHeader.width && i < pixelCount - 2; j++, i+=3) {
             blue.push_back(pixels[i]);
             green.push_back(pixels[i + 1]);
@@ -116,9 +113,6 @@ void BMP::setColors(const std::vector<unsigned char> &bl, const std::vector<unsi
     std::copy(re.begin(), re.end(), std::back_inserter(red));
 
     for (int i{}, k{}; i < pixelCount-2; i += dibHeader.width % 4) {
-        if (i % (dibHeader.width * 3) == 0 && i != 0) {
-            continue;
-        }
         for (int j{}; j < dibHeader.width && i < pixelCount - 3; j++, i += 3) {
             pixels[i] = blue[k];
             pixels[i + 1] = green[k];
