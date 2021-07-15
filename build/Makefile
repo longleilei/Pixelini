@@ -494,6 +494,33 @@ src/png/png.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/png/png.cpp.s
 .PHONY : src/png/png.cpp.s
 
+src/utility/resize.o: src/utility/resize.cpp.o
+
+.PHONY : src/utility/resize.o
+
+# target to build an object file
+src/utility/resize.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/utility/resize.cpp.o
+.PHONY : src/utility/resize.cpp.o
+
+src/utility/resize.i: src/utility/resize.cpp.i
+
+.PHONY : src/utility/resize.i
+
+# target to preprocess a source file
+src/utility/resize.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/utility/resize.cpp.i
+.PHONY : src/utility/resize.cpp.i
+
+src/utility/resize.s: src/utility/resize.cpp.s
+
+.PHONY : src/utility/resize.s
+
+# target to generate assembly for a file
+src/utility/resize.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/utility/resize.cpp.s
+.PHONY : src/utility/resize.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -542,6 +569,9 @@ help:
 	@echo "... src/png/png.o"
 	@echo "... src/png/png.i"
 	@echo "... src/png/png.s"
+	@echo "... src/utility/resize.o"
+	@echo "... src/utility/resize.i"
+	@echo "... src/utility/resize.s"
 .PHONY : help
 
 

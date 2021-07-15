@@ -17,6 +17,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/image/image.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/image/image.cpp.o"
   "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/main.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/main.cpp.o"
   "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/png/png.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/png/png.cpp.o"
+  "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/utility/resize.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/utility/resize.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

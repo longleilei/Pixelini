@@ -53,8 +53,13 @@ CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/filters/grayScale.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/filters/histogram.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/filters/smoothing.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/filters/sobel.h
+CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/utility/resize.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../src/main.cpp
 
 CMakeFiles/Pixelini.dir/src/png/png.cpp.o: ../headers/png/png.h
 CMakeFiles/Pixelini.dir/src/png/png.cpp.o: ../src/png/png.cpp
+
+CMakeFiles/Pixelini.dir/src/utility/resize.cpp.o: ../headers/filters/filter.h
+CMakeFiles/Pixelini.dir/src/utility/resize.cpp.o: ../headers/utility/resize.h
+CMakeFiles/Pixelini.dir/src/utility/resize.cpp.o: ../src/utility/resize.cpp
 

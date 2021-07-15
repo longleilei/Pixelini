@@ -12,6 +12,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Pixelini.dir/src/image/image.cpp.o"
   "CMakeFiles/Pixelini.dir/src/main.cpp.o"
   "CMakeFiles/Pixelini.dir/src/png/png.cpp.o"
+  "CMakeFiles/Pixelini.dir/src/utility/resize.cpp.o"
   "Pixelini"
   "Pixelini.pdb"
 )

@@ -6,41 +6,21 @@
 
 #IncludeRegexTransform: 
 
-../headers/filters/canny.h
-vector
--
-filters/filter.h
-../headers/filters/filters/filter.h
-
 ../headers/filters/filter.h
 vector
 -
 
-../headers/filters/smoothing.h
+../headers/utility/resize.h
 vector
 -
-filters/filter.h
-../headers/filters/filters/filter.h
+../filters/filter.h
+../headers/filters/filter.h
 
-../headers/filters/sobel.h
-vector
--
-filters/filter.h
-../headers/filters/filters/filter.h
-
-/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/canny.cpp
+/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/utility/resize.cpp
 iostream
 -
-filters/canny.h
-/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/filters/canny.h
-filters/smoothing.h
-/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/filters/smoothing.h
-filters/sobel.h
-/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/filters/sobel.h
-cmath
--
-numeric
--
+utility/resize.h
+/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/utility/utility/resize.h
 iomanip
 -
 
