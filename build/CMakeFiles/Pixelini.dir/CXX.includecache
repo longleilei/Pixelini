@@ -6,21 +6,41 @@
 
 #IncludeRegexTransform: 
 
-../headers/filters/filter.h
+../headers/bmp/bmp.h
 vector
 -
 
-../headers/utility/resize.h
-vector
+../headers/files/loader.h
+string
 -
-../filters/filter.h
-../headers/filters/filter.h
+stdio.h
+-
+memory
+-
 
-/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/utility/resize.cpp
+../headers/files/writer.h
+string
+-
+stdio.h
+-
+memory
+-
+
+/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/bmp/bmp.cpp
+string
+-
 iostream
 -
-utility/resize.h
-/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/utility/utility/resize.h
-iomanip
+memory
 -
+vector
+-
+iterator
+-
+files/loader.h
+/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/bmp/files/loader.h
+files/writer.h
+/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/bmp/files/writer.h
+bmp/bmp.h
+/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/bmp/bmp/bmp.h
 
