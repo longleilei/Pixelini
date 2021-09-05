@@ -94,12 +94,12 @@ clean: CMakeFiles/Pixelini.dir/clean
 CMakeFiles/Pixelini.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 "Built target Pixelini"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18 "Built target Pixelini"
 .PHONY : CMakeFiles/Pixelini.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Pixelini.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Pixelini.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles 0
 .PHONY : CMakeFiles/Pixelini.dir/rule

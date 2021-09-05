@@ -6,41 +6,29 @@
 
 #IncludeRegexTransform: 
 
-../headers/bmp/bmp.h
+../headers/filters/filter.h
 vector
 -
 
-../headers/files/loader.h
-string
+../headers/filters/fourier.h
+filters/filter.h
+../headers/filters/filters/filter.h
+vector
 -
-stdio.h
--
-memory
--
+utility/complex.h
+../headers/filters/utility/complex.h
 
-../headers/files/writer.h
-string
--
-stdio.h
--
-memory
--
-
-/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/bmp/bmp.cpp
-string
--
+../headers/utility/complex.h
 iostream
 -
-memory
+
+/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/fourier.cpp
+filters/fourier.h
+/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/filters/fourier.h
+cmath
 -
 vector
 -
-iterator
+iomanip
 -
-files/loader.h
-/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/bmp/files/loader.h
-files/writer.h
-/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/bmp/files/writer.h
-bmp/bmp.h
-/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/bmp/bmp/bmp.h
 

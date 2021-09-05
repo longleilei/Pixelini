@@ -38,6 +38,7 @@ class BMP
 public:
     std::vector<uint8_t> pixels;
     BMP(std::string fileName);
+    
 
     std::vector<unsigned char> getBlue();
     std::vector<unsigned char> getGreen();
@@ -45,7 +46,11 @@ public:
 
     void readHeader();
 
+    void saveImg( size_t width, size_t height, 
+    const std::vector<unsigned char> &bl, const std::vector<unsigned char> &gr, const std::vector<unsigned char> &re); 
+
     void writeImg(int offset, int pixelCount);
+    void writeHeader(); 
 
     void setColors(const std::vector<unsigned char> &blue, const std::vector<unsigned char> &green, const std::vector<unsigned char> &red);
 

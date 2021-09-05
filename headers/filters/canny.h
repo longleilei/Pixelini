@@ -23,6 +23,7 @@ public:
     void applyNoiseReduction(); 
     void applySobel(); 
     void nonMaxSuppression(std::vector<std::vector<unsigned int>> img); 
+    void hysteresisThresholding(std::vector<std::vector<unsigned int>> img); 
 
 
 

@@ -155,9 +155,35 @@ CMakeFiles/Pixelini.dir/src/filters/filter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Pixelini.dir/src/filters/filter.cpp.s"
 	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/filter.cpp -o CMakeFiles/Pixelini.dir/src/filters/filter.cpp.s
 
+CMakeFiles/Pixelini.dir/src/filters/fourier.cpp.o: CMakeFiles/Pixelini.dir/flags.make
+CMakeFiles/Pixelini.dir/src/filters/fourier.cpp.o: ../src/filters/fourier.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Pixelini.dir/src/filters/fourier.cpp.o"
+	clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Pixelini.dir/src/filters/fourier.cpp.o -c /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/fourier.cpp
+
+CMakeFiles/Pixelini.dir/src/filters/fourier.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Pixelini.dir/src/filters/fourier.cpp.i"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/fourier.cpp > CMakeFiles/Pixelini.dir/src/filters/fourier.cpp.i
+
+CMakeFiles/Pixelini.dir/src/filters/fourier.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Pixelini.dir/src/filters/fourier.cpp.s"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/fourier.cpp -o CMakeFiles/Pixelini.dir/src/filters/fourier.cpp.s
+
+CMakeFiles/Pixelini.dir/src/filters/fourierFilters.cpp.o: CMakeFiles/Pixelini.dir/flags.make
+CMakeFiles/Pixelini.dir/src/filters/fourierFilters.cpp.o: ../src/filters/fourierFilters.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Pixelini.dir/src/filters/fourierFilters.cpp.o"
+	clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Pixelini.dir/src/filters/fourierFilters.cpp.o -c /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/fourierFilters.cpp
+
+CMakeFiles/Pixelini.dir/src/filters/fourierFilters.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Pixelini.dir/src/filters/fourierFilters.cpp.i"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/fourierFilters.cpp > CMakeFiles/Pixelini.dir/src/filters/fourierFilters.cpp.i
+
+CMakeFiles/Pixelini.dir/src/filters/fourierFilters.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Pixelini.dir/src/filters/fourierFilters.cpp.s"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/fourierFilters.cpp -o CMakeFiles/Pixelini.dir/src/filters/fourierFilters.cpp.s
+
 CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.o: CMakeFiles/Pixelini.dir/flags.make
 CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.o: ../src/filters/grayScale.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.o"
 	clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.o -c /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/grayScale.cpp
 
 CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.i: cmake_force
@@ -170,7 +196,7 @@ CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.s: cmake_force
 
 CMakeFiles/Pixelini.dir/src/filters/histogram.cpp.o: CMakeFiles/Pixelini.dir/flags.make
 CMakeFiles/Pixelini.dir/src/filters/histogram.cpp.o: ../src/filters/histogram.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Pixelini.dir/src/filters/histogram.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Pixelini.dir/src/filters/histogram.cpp.o"
 	clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Pixelini.dir/src/filters/histogram.cpp.o -c /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/histogram.cpp
 
 CMakeFiles/Pixelini.dir/src/filters/histogram.cpp.i: cmake_force
@@ -183,7 +209,7 @@ CMakeFiles/Pixelini.dir/src/filters/histogram.cpp.s: cmake_force
 
 CMakeFiles/Pixelini.dir/src/filters/smoothing.cpp.o: CMakeFiles/Pixelini.dir/flags.make
 CMakeFiles/Pixelini.dir/src/filters/smoothing.cpp.o: ../src/filters/smoothing.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Pixelini.dir/src/filters/smoothing.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Pixelini.dir/src/filters/smoothing.cpp.o"
 	clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Pixelini.dir/src/filters/smoothing.cpp.o -c /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/smoothing.cpp
 
 CMakeFiles/Pixelini.dir/src/filters/smoothing.cpp.i: cmake_force
@@ -196,7 +222,7 @@ CMakeFiles/Pixelini.dir/src/filters/smoothing.cpp.s: cmake_force
 
 CMakeFiles/Pixelini.dir/src/filters/sobel.cpp.o: CMakeFiles/Pixelini.dir/flags.make
 CMakeFiles/Pixelini.dir/src/filters/sobel.cpp.o: ../src/filters/sobel.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Pixelini.dir/src/filters/sobel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Pixelini.dir/src/filters/sobel.cpp.o"
 	clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Pixelini.dir/src/filters/sobel.cpp.o -c /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/sobel.cpp
 
 CMakeFiles/Pixelini.dir/src/filters/sobel.cpp.i: cmake_force
@@ -209,7 +235,7 @@ CMakeFiles/Pixelini.dir/src/filters/sobel.cpp.s: cmake_force
 
 CMakeFiles/Pixelini.dir/src/image/image.cpp.o: CMakeFiles/Pixelini.dir/flags.make
 CMakeFiles/Pixelini.dir/src/image/image.cpp.o: ../src/image/image.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Pixelini.dir/src/image/image.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Pixelini.dir/src/image/image.cpp.o"
 	clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Pixelini.dir/src/image/image.cpp.o -c /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/image/image.cpp
 
 CMakeFiles/Pixelini.dir/src/image/image.cpp.i: cmake_force
@@ -222,7 +248,7 @@ CMakeFiles/Pixelini.dir/src/image/image.cpp.s: cmake_force
 
 CMakeFiles/Pixelini.dir/src/main.cpp.o: CMakeFiles/Pixelini.dir/flags.make
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Pixelini.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Pixelini.dir/src/main.cpp.o"
 	clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Pixelini.dir/src/main.cpp.o -c /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/main.cpp
 
 CMakeFiles/Pixelini.dir/src/main.cpp.i: cmake_force
@@ -235,7 +261,7 @@ CMakeFiles/Pixelini.dir/src/main.cpp.s: cmake_force
 
 CMakeFiles/Pixelini.dir/src/png/png.cpp.o: CMakeFiles/Pixelini.dir/flags.make
 CMakeFiles/Pixelini.dir/src/png/png.cpp.o: ../src/png/png.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Pixelini.dir/src/png/png.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Pixelini.dir/src/png/png.cpp.o"
 	clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Pixelini.dir/src/png/png.cpp.o -c /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/png/png.cpp
 
 CMakeFiles/Pixelini.dir/src/png/png.cpp.i: cmake_force
@@ -246,9 +272,22 @@ CMakeFiles/Pixelini.dir/src/png/png.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Pixelini.dir/src/png/png.cpp.s"
 	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/png/png.cpp -o CMakeFiles/Pixelini.dir/src/png/png.cpp.s
 
+CMakeFiles/Pixelini.dir/src/utility/complex.cpp.o: CMakeFiles/Pixelini.dir/flags.make
+CMakeFiles/Pixelini.dir/src/utility/complex.cpp.o: ../src/utility/complex.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Pixelini.dir/src/utility/complex.cpp.o"
+	clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Pixelini.dir/src/utility/complex.cpp.o -c /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/utility/complex.cpp
+
+CMakeFiles/Pixelini.dir/src/utility/complex.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Pixelini.dir/src/utility/complex.cpp.i"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/utility/complex.cpp > CMakeFiles/Pixelini.dir/src/utility/complex.cpp.i
+
+CMakeFiles/Pixelini.dir/src/utility/complex.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Pixelini.dir/src/utility/complex.cpp.s"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/utility/complex.cpp -o CMakeFiles/Pixelini.dir/src/utility/complex.cpp.s
+
 CMakeFiles/Pixelini.dir/src/utility/resize.cpp.o: CMakeFiles/Pixelini.dir/flags.make
 CMakeFiles/Pixelini.dir/src/utility/resize.cpp.o: ../src/utility/resize.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Pixelini.dir/src/utility/resize.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Pixelini.dir/src/utility/resize.cpp.o"
 	clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Pixelini.dir/src/utility/resize.cpp.o -c /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/utility/resize.cpp
 
 CMakeFiles/Pixelini.dir/src/utility/resize.cpp.i: cmake_force
@@ -267,6 +306,8 @@ Pixelini_OBJECTS = \
 "CMakeFiles/Pixelini.dir/src/files/writer.cpp.o" \
 "CMakeFiles/Pixelini.dir/src/filters/canny.cpp.o" \
 "CMakeFiles/Pixelini.dir/src/filters/filter.cpp.o" \
+"CMakeFiles/Pixelini.dir/src/filters/fourier.cpp.o" \
+"CMakeFiles/Pixelini.dir/src/filters/fourierFilters.cpp.o" \
 "CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.o" \
 "CMakeFiles/Pixelini.dir/src/filters/histogram.cpp.o" \
 "CMakeFiles/Pixelini.dir/src/filters/smoothing.cpp.o" \
@@ -274,6 +315,7 @@ Pixelini_OBJECTS = \
 "CMakeFiles/Pixelini.dir/src/image/image.cpp.o" \
 "CMakeFiles/Pixelini.dir/src/main.cpp.o" \
 "CMakeFiles/Pixelini.dir/src/png/png.cpp.o" \
+"CMakeFiles/Pixelini.dir/src/utility/complex.cpp.o" \
 "CMakeFiles/Pixelini.dir/src/utility/resize.cpp.o"
 
 # External object files for target Pixelini
@@ -285,6 +327,8 @@ Pixelini: CMakeFiles/Pixelini.dir/src/files/loader.cpp.o
 Pixelini: CMakeFiles/Pixelini.dir/src/files/writer.cpp.o
 Pixelini: CMakeFiles/Pixelini.dir/src/filters/canny.cpp.o
 Pixelini: CMakeFiles/Pixelini.dir/src/filters/filter.cpp.o
+Pixelini: CMakeFiles/Pixelini.dir/src/filters/fourier.cpp.o
+Pixelini: CMakeFiles/Pixelini.dir/src/filters/fourierFilters.cpp.o
 Pixelini: CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.o
 Pixelini: CMakeFiles/Pixelini.dir/src/filters/histogram.cpp.o
 Pixelini: CMakeFiles/Pixelini.dir/src/filters/smoothing.cpp.o
@@ -292,10 +336,11 @@ Pixelini: CMakeFiles/Pixelini.dir/src/filters/sobel.cpp.o
 Pixelini: CMakeFiles/Pixelini.dir/src/image/image.cpp.o
 Pixelini: CMakeFiles/Pixelini.dir/src/main.cpp.o
 Pixelini: CMakeFiles/Pixelini.dir/src/png/png.cpp.o
+Pixelini: CMakeFiles/Pixelini.dir/src/utility/complex.cpp.o
 Pixelini: CMakeFiles/Pixelini.dir/src/utility/resize.cpp.o
 Pixelini: CMakeFiles/Pixelini.dir/build.make
 Pixelini: CMakeFiles/Pixelini.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable Pixelini"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable Pixelini"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Pixelini.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

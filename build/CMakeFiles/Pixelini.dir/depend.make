@@ -25,6 +25,16 @@ CMakeFiles/Pixelini.dir/src/filters/canny.cpp.o: ../src/filters/canny.cpp
 CMakeFiles/Pixelini.dir/src/filters/filter.cpp.o: ../headers/filters/filter.h
 CMakeFiles/Pixelini.dir/src/filters/filter.cpp.o: ../src/filters/filter.cpp
 
+CMakeFiles/Pixelini.dir/src/filters/fourier.cpp.o: ../headers/filters/filter.h
+CMakeFiles/Pixelini.dir/src/filters/fourier.cpp.o: ../headers/filters/fourier.h
+CMakeFiles/Pixelini.dir/src/filters/fourier.cpp.o: ../headers/utility/complex.h
+CMakeFiles/Pixelini.dir/src/filters/fourier.cpp.o: ../src/filters/fourier.cpp
+
+CMakeFiles/Pixelini.dir/src/filters/fourierFilters.cpp.o: ../headers/filters/filter.h
+CMakeFiles/Pixelini.dir/src/filters/fourierFilters.cpp.o: ../headers/filters/fourierFilters.h
+CMakeFiles/Pixelini.dir/src/filters/fourierFilters.cpp.o: ../headers/utility/complex.h
+CMakeFiles/Pixelini.dir/src/filters/fourierFilters.cpp.o: ../src/filters/fourierFilters.cpp
+
 CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.o: ../headers/filters/filter.h
 CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.o: ../headers/filters/grayScale.h
 CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.o: ../src/filters/grayScale.cpp
@@ -49,15 +59,21 @@ CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/files/loader.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/files/writer.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/filters/canny.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/filters/filter.h
+CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/filters/fourier.h
+CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/filters/fourierFilters.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/filters/grayScale.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/filters/histogram.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/filters/smoothing.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/filters/sobel.h
+CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/utility/complex.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../headers/utility/resize.h
 CMakeFiles/Pixelini.dir/src/main.cpp.o: ../src/main.cpp
 
 CMakeFiles/Pixelini.dir/src/png/png.cpp.o: ../headers/png/png.h
 CMakeFiles/Pixelini.dir/src/png/png.cpp.o: ../src/png/png.cpp
+
+CMakeFiles/Pixelini.dir/src/utility/complex.cpp.o: ../headers/utility/complex.h
+CMakeFiles/Pixelini.dir/src/utility/complex.cpp.o: ../src/utility/complex.cpp
 
 CMakeFiles/Pixelini.dir/src/utility/resize.cpp.o: ../headers/filters/filter.h
 CMakeFiles/Pixelini.dir/src/utility/resize.cpp.o: ../headers/utility/resize.h

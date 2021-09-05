@@ -25,6 +25,16 @@ CMakeFiles/Pixelini.dir/src/filters/canny.cpp.o
 CMakeFiles/Pixelini.dir/src/filters/filter.cpp.o
  ../headers/filters/filter.h
  /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/filter.cpp
+CMakeFiles/Pixelini.dir/src/filters/fourier.cpp.o
+ ../headers/filters/filter.h
+ ../headers/filters/fourier.h
+ ../headers/utility/complex.h
+ /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/fourier.cpp
+CMakeFiles/Pixelini.dir/src/filters/fourierFilters.cpp.o
+ ../headers/filters/filter.h
+ ../headers/filters/fourierFilters.h
+ ../headers/utility/complex.h
+ /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/fourierFilters.cpp
 CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.o
  ../headers/filters/filter.h
  ../headers/filters/grayScale.h
@@ -50,15 +60,21 @@ CMakeFiles/Pixelini.dir/src/main.cpp.o
  ../headers/files/writer.h
  ../headers/filters/canny.h
  ../headers/filters/filter.h
+ ../headers/filters/fourier.h
+ ../headers/filters/fourierFilters.h
  ../headers/filters/grayScale.h
  ../headers/filters/histogram.h
  ../headers/filters/smoothing.h
  ../headers/filters/sobel.h
+ ../headers/utility/complex.h
  ../headers/utility/resize.h
  /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/main.cpp
 CMakeFiles/Pixelini.dir/src/png/png.cpp.o
  ../headers/png/png.h
  /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/png/png.cpp
+CMakeFiles/Pixelini.dir/src/utility/complex.cpp.o
+ ../headers/utility/complex.h
+ /Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/utility/complex.cpp
 CMakeFiles/Pixelini.dir/src/utility/resize.cpp.o
  ../headers/filters/filter.h
  ../headers/utility/resize.h

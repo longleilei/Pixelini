@@ -305,6 +305,60 @@ src/filters/filter.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/filters/filter.cpp.s
 .PHONY : src/filters/filter.cpp.s
 
+src/filters/fourier.o: src/filters/fourier.cpp.o
+
+.PHONY : src/filters/fourier.o
+
+# target to build an object file
+src/filters/fourier.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/filters/fourier.cpp.o
+.PHONY : src/filters/fourier.cpp.o
+
+src/filters/fourier.i: src/filters/fourier.cpp.i
+
+.PHONY : src/filters/fourier.i
+
+# target to preprocess a source file
+src/filters/fourier.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/filters/fourier.cpp.i
+.PHONY : src/filters/fourier.cpp.i
+
+src/filters/fourier.s: src/filters/fourier.cpp.s
+
+.PHONY : src/filters/fourier.s
+
+# target to generate assembly for a file
+src/filters/fourier.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/filters/fourier.cpp.s
+.PHONY : src/filters/fourier.cpp.s
+
+src/filters/fourierFilters.o: src/filters/fourierFilters.cpp.o
+
+.PHONY : src/filters/fourierFilters.o
+
+# target to build an object file
+src/filters/fourierFilters.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/filters/fourierFilters.cpp.o
+.PHONY : src/filters/fourierFilters.cpp.o
+
+src/filters/fourierFilters.i: src/filters/fourierFilters.cpp.i
+
+.PHONY : src/filters/fourierFilters.i
+
+# target to preprocess a source file
+src/filters/fourierFilters.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/filters/fourierFilters.cpp.i
+.PHONY : src/filters/fourierFilters.cpp.i
+
+src/filters/fourierFilters.s: src/filters/fourierFilters.cpp.s
+
+.PHONY : src/filters/fourierFilters.s
+
+# target to generate assembly for a file
+src/filters/fourierFilters.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/filters/fourierFilters.cpp.s
+.PHONY : src/filters/fourierFilters.cpp.s
+
 src/filters/grayScale.o: src/filters/grayScale.cpp.o
 
 .PHONY : src/filters/grayScale.o
@@ -494,6 +548,33 @@ src/png/png.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/png/png.cpp.s
 .PHONY : src/png/png.cpp.s
 
+src/utility/complex.o: src/utility/complex.cpp.o
+
+.PHONY : src/utility/complex.o
+
+# target to build an object file
+src/utility/complex.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/utility/complex.cpp.o
+.PHONY : src/utility/complex.cpp.o
+
+src/utility/complex.i: src/utility/complex.cpp.i
+
+.PHONY : src/utility/complex.i
+
+# target to preprocess a source file
+src/utility/complex.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/utility/complex.cpp.i
+.PHONY : src/utility/complex.cpp.i
+
+src/utility/complex.s: src/utility/complex.cpp.s
+
+.PHONY : src/utility/complex.s
+
+# target to generate assembly for a file
+src/utility/complex.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/src/utility/complex.cpp.s
+.PHONY : src/utility/complex.cpp.s
+
 src/utility/resize.o: src/utility/resize.cpp.o
 
 .PHONY : src/utility/resize.o
@@ -548,6 +629,12 @@ help:
 	@echo "... src/filters/filter.o"
 	@echo "... src/filters/filter.i"
 	@echo "... src/filters/filter.s"
+	@echo "... src/filters/fourier.o"
+	@echo "... src/filters/fourier.i"
+	@echo "... src/filters/fourier.s"
+	@echo "... src/filters/fourierFilters.o"
+	@echo "... src/filters/fourierFilters.i"
+	@echo "... src/filters/fourierFilters.s"
 	@echo "... src/filters/grayScale.o"
 	@echo "... src/filters/grayScale.i"
 	@echo "... src/filters/grayScale.s"
@@ -569,6 +656,9 @@ help:
 	@echo "... src/png/png.o"
 	@echo "... src/png/png.i"
 	@echo "... src/png/png.s"
+	@echo "... src/utility/complex.o"
+	@echo "... src/utility/complex.i"
+	@echo "... src/utility/complex.s"
 	@echo "... src/utility/resize.o"
 	@echo "... src/utility/resize.i"
 	@echo "... src/utility/resize.s"

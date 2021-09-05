@@ -28,9 +28,9 @@ public:
 
     void convertToGrayScale();
 
-    void doSmoothing(std::vector<unsigned unsigned char> &colorVec);
+    void doSmoothing(std::vector<unsigned char> &colorVec);
 
-    void gaussianBlur(std::vector<unsigned unsigned char> &colorVec);
+    void gaussianBlur(std::vector<unsigned char> &colorVec);
     double **createKernel(double **input, int size);
 
 };
