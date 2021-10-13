@@ -1,3 +1,3 @@
-/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/rebuild_cache.dir
-/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/edit_cache.dir
-/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir
+/Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/rebuild_cache.dir
+/Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/edit_cache.dir
+/Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir

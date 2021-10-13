@@ -1,4 +1,4 @@
-#include "utility/complex.h"
+#include "complex.h"
 #include<cmath>
 
 
@@ -19,24 +19,35 @@ double Complex::normalize() {
     return sqrt(real * real + imaginary * imaginary);
 }
 
-Complex& Complex::operator+(const Complex& num) {
-    //Complex{real+img}
-    real += num.real;
-    imaginary += num.imaginary;
-    return *this;
+void Complex::nullify() {
+    if(abs(real) < 0.00000001){
+        real = 0; 
+    }
+
+    if(abs(imaginary) < 0.00000001){
+        imaginary = 0; 
+    }
 }
 
-Complex& Complex::operator-(int num) {
-
-    real -= num;
-    imaginary -= num;
-    return *this;
+Complex Complex::operator+(const Complex& num) {
+    Complex temp{ real, imaginary}; 
+    temp.real += num.real;
+    temp.imaginary += num.imaginary;
+    return temp;
 }
 
-Complex& Complex::operator-(const Complex& num) {
-    real -= num.real;
-    imaginary -= num.imaginary;
-    return *this;
+Complex Complex::operator-(int num) {
+    Complex temp{ real, imaginary}; 
+    temp.real -= num;
+    temp.imaginary -= num;
+    return temp;
+}
+
+Complex Complex::operator-(const Complex& num) {
+    Complex temp{ real, imaginary}; 
+    temp.real -= num.real;
+    temp.imaginary -= num.imaginary;
+    return temp;
 }
 
 Complex Complex::operator*(const Complex& num) {
@@ -52,41 +63,40 @@ Complex Complex::operator*(const Complex& num) {
     return temp;
 }
 
-Complex& Complex::operator*(int num) {
-    real *= num;
-    imaginary *= num;
-    return *this;
+Complex Complex::operator*(int num) {
+    Complex temp{ real, imaginary}; 
+    temp.real *= num;
+    temp.imaginary *= num;
+    return temp;
 }
 
-Complex Complex::operator*(double num) {
-    Complex temp{}; 
-    temp.real = this->real; 
-    temp.imaginary = this->imaginary;
-    temp.real *= num; 
-    temp.imaginary *= num; 
-    return temp; 
+Complex Complex::operator/(int num) {
+    Complex temp{ real, imaginary}; 
+    temp.real /= num;
+    temp.imaginary /= num;
+    return temp;
 }
 
-Complex& Complex::operator/(int num) {
-    real /= num;
-    imaginary /= num;
-    return *this;
-}
-
-Complex& Complex::operator/(const Complex& num) {
+Complex Complex::operator/(const Complex& num) {
+    Complex temp{ real, imaginary}; 
     auto realTemp{ real };
-    real = (real * num.real + imaginary * num.imaginary) / (num.real * num.real + num.imaginary * num.imaginary);
-    imaginary = (num.real * imaginary - realTemp * num.imaginary) / (num.real * num.real + num.imaginary * num.imaginary);
-    return *this;
+    temp.real = (real * num.real + imaginary * num.imaginary) / (num.real * num.real + num.imaginary * num.imaginary);
+    temp.imaginary = (num.real * imaginary - realTemp * num.imaginary) / (num.real * num.real + num.imaginary * num.imaginary);
+    return temp;
 }
 
-Complex& Complex::operator^(int num) {
+Complex Complex::operator^(int num) {
+    Complex temp{ real, imaginary};
     auto abs{ pow(normalize(), num) };
     auto arg{ atan(imaginary / real) };
-    real = abs * cos(num * arg);
-    imaginary = abs * sin(num * arg);
-    return *this;
+    temp.real = abs * cos(num * arg);
+    temp.imaginary = abs * sin(num * arg);
+    return temp;
 
+}
+
+Complex Complex::conjugate(const Complex& num){
+    return { num.real, num.imaginary * (-1)}; 
 }
 
 std::ostream& operator<<(std::ostream& os, const Complex& out)

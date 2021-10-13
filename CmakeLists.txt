@@ -1,15 +1,17 @@
 cmake_minimum_required (VERSION 3.17.3)
 project (Pixelini)
 
-set(CMAKE_CXX_COMPILER clang++)
+set(CMAKE_CXX_COMPILER g++)
 
 set(PROJECT_HEADER_DIR ${CMAKE_SOURCE_DIR}/headers)
 set(LIB_DIR ${CMAKE_SOURCE_DIR}/libs)
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -framework Cocoa -framework OpenGL -framework IOKit")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS}")
 
 file(GLOB_RECURSE Pixelini_SRC src/*.cpp)
 
 file(GLOB_RECURSE APP_HEADERS "${PROJECT_HEADER_DIR}/*.h")
+
+#CFLAGS= -isysroot "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk"
 
 ADD_DEFINITIONS(-Wall -std=c++17 -fexceptions )
 

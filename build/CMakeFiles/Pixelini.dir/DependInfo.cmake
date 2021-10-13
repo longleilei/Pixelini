@@ -1,32 +1,31 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
   )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/bmp/bmp.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/bmp/bmp.cpp.o"
-  "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/files/exception.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/files/exception.cpp.o"
-  "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/files/loader.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/files/loader.cpp.o"
-  "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/files/writer.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/files/writer.cpp.o"
-  "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/canny.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/filters/canny.cpp.o"
-  "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/filter.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/filters/filter.cpp.o"
-  "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/fourier.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/filters/fourier.cpp.o"
-  "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/fourierFilters.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/filters/fourierFilters.cpp.o"
-  "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/grayScale.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.o"
-  "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/histogram.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/filters/histogram.cpp.o"
-  "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/smoothing.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/filters/smoothing.cpp.o"
-  "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/filters/sobel.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/filters/sobel.cpp.o"
-  "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/image/image.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/image/image.cpp.o"
-  "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/main.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/main.cpp.o"
-  "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/png/png.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/png/png.cpp.o"
-  "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/utility/complex.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/utility/complex.cpp.o"
-  "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/src/utility/resize.cpp" "/Users/leilei/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles/Pixelini.dir/src/utility/resize.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../headers"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/src/bmp/bmp.cpp" "CMakeFiles/Pixelini.dir/src/bmp/bmp.cpp.o" "gcc" "CMakeFiles/Pixelini.dir/src/bmp/bmp.cpp.o.d"
+  "/Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/src/files/exception.cpp" "CMakeFiles/Pixelini.dir/src/files/exception.cpp.o" "gcc" "CMakeFiles/Pixelini.dir/src/files/exception.cpp.o.d"
+  "/Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/src/files/loader.cpp" "CMakeFiles/Pixelini.dir/src/files/loader.cpp.o" "gcc" "CMakeFiles/Pixelini.dir/src/files/loader.cpp.o.d"
+  "/Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/src/files/writer.cpp" "CMakeFiles/Pixelini.dir/src/files/writer.cpp.o" "gcc" "CMakeFiles/Pixelini.dir/src/files/writer.cpp.o.d"
+  "/Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/src/filters/FFT.cpp" "CMakeFiles/Pixelini.dir/src/filters/FFT.cpp.o" "gcc" "CMakeFiles/Pixelini.dir/src/filters/FFT.cpp.o.d"
+  "/Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/src/filters/canny.cpp" "CMakeFiles/Pixelini.dir/src/filters/canny.cpp.o" "gcc" "CMakeFiles/Pixelini.dir/src/filters/canny.cpp.o.d"
+  "/Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/src/filters/filter.cpp" "CMakeFiles/Pixelini.dir/src/filters/filter.cpp.o" "gcc" "CMakeFiles/Pixelini.dir/src/filters/filter.cpp.o.d"
+  "/Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/src/filters/fourier.cpp" "CMakeFiles/Pixelini.dir/src/filters/fourier.cpp.o" "gcc" "CMakeFiles/Pixelini.dir/src/filters/fourier.cpp.o.d"
+  "/Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/src/filters/fourierFilters.cpp" "CMakeFiles/Pixelini.dir/src/filters/fourierFilters.cpp.o" "gcc" "CMakeFiles/Pixelini.dir/src/filters/fourierFilters.cpp.o.d"
+  "/Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/src/filters/grayScale.cpp" "CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.o" "gcc" "CMakeFiles/Pixelini.dir/src/filters/grayScale.cpp.o.d"
+  "/Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/src/filters/histogram.cpp" "CMakeFiles/Pixelini.dir/src/filters/histogram.cpp.o" "gcc" "CMakeFiles/Pixelini.dir/src/filters/histogram.cpp.o.d"
+  "/Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/src/filters/smoothing.cpp" "CMakeFiles/Pixelini.dir/src/filters/smoothing.cpp.o" "gcc" "CMakeFiles/Pixelini.dir/src/filters/smoothing.cpp.o.d"
+  "/Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/src/filters/sobel.cpp" "CMakeFiles/Pixelini.dir/src/filters/sobel.cpp.o" "gcc" "CMakeFiles/Pixelini.dir/src/filters/sobel.cpp.o.d"
+  "/Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/src/image/image.cpp" "CMakeFiles/Pixelini.dir/src/image/image.cpp.o" "gcc" "CMakeFiles/Pixelini.dir/src/image/image.cpp.o.d"
+  "/Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/src/main.cpp" "CMakeFiles/Pixelini.dir/src/main.cpp.o" "gcc" "CMakeFiles/Pixelini.dir/src/main.cpp.o.d"
+  "/Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/src/png/png.cpp" "CMakeFiles/Pixelini.dir/src/png/png.cpp.o" "gcc" "CMakeFiles/Pixelini.dir/src/png/png.cpp.o.d"
+  "/Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/src/utility/complex.cpp" "CMakeFiles/Pixelini.dir/src/utility/complex.cpp.o" "gcc" "CMakeFiles/Pixelini.dir/src/utility/complex.cpp.o.d"
+  "/Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/src/utility/resize.cpp" "CMakeFiles/Pixelini.dir/src/utility/resize.cpp.o" "gcc" "CMakeFiles/Pixelini.dir/src/utility/resize.cpp.o.d"
   )
 
 # Targets to which this target links.
