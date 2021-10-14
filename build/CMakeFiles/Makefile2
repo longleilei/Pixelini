@@ -45,19 +45,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/Cellar/cmake/3.21.3_1/bin/cmake
+CMAKE_COMMAND = /opt/homebrew/Cellar/cmake/3.21.0/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/Cellar/cmake/3.21.3_1/bin/cmake -E rm -f
+RM = /opt/homebrew/Cellar/cmake/3.21.0/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini
+CMAKE_SOURCE_DIR = /Users/anna/Documents/Pixelini/Pixelini
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/build
+CMAKE_BINARY_DIR = /Users/anna/Documents/Pixelini/Pixelini/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -81,14 +81,14 @@ clean: CMakeFiles/Pixelini.dir/clean
 CMakeFiles/Pixelini.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pixelini.dir/build.make CMakeFiles/Pixelini.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19 "Built target Pixelini"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/anna/Documents/Pixelini/Pixelini/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19 "Built target Pixelini"
 .PHONY : CMakeFiles/Pixelini.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Pixelini.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/anna/Documents/Pixelini/Pixelini/build/CMakeFiles 19
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Pixelini.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/anna/Documents/Pixelini/Pixelini/build/CMakeFiles 0
 .PHONY : CMakeFiles/Pixelini.dir/rule
 
 # Convenience name for target.

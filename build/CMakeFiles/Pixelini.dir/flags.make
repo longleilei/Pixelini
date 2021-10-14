@@ -4,7 +4,9 @@
 # compile CXX with g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/anastasiasukhovii/Documents/CPlus/Develop-branch/Pixelini/headers
+CXX_INCLUDES = -I/Users/anna/Documents/Pixelini/Pixelini/headers
 
-CXX_FLAGS =  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk   -Wall -std=c++17 -fexceptions
+CXX_FLAGSarm64 =  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk   -Wall -std=c++17 -fexceptions
+
+CXX_FLAGS =  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk   -Wall -std=c++17 -fexceptions
 

@@ -1,28 +1,23 @@
-// #include "files/loader.h"
-// #include "files/writer.h"
-// #include <iostream>
-// #include "files/exception.h"
-// #include "bmp/bmp.h"
-// #include "filters/filter.h"
-// #include "filters/histogram.h"
-// #include "filters/smoothing.h"
-// #include "filters/grayScale.h"
-// #include "filters/sobel.h"
-// #include "filters/canny.h"
-// #include "filters/fourier.h"
-// #include "filters/fourierFilters.h"
-// #include "filters/FFT.h" 
-// #include "utility/resize.h"
-// #include "utility/complex.h"
+#include "files/loader.h"
+#include "files/writer.h"
+#include <iostream>
+#include "files/exception.h"
+#include "bmp/bmp.h"
+#include "filters/filter.h"
+#include "filters/histogram.h"
+#include "filters/smoothing.h"
+#include "filters/grayScale.h"
+#include "filters/sobel.h"
+#include "filters/canny.h"
+#include "filters/fourier.h"
+#include "filters/fourierFilters.h"
+#include "filters/FFT.h" 
+#include "utility/resize.h"
+#include "utility/complex.h"
 
-#include <cmath>
 
 
 int main(){
-
-    auto t{cos((2 * M_PI*4) / 1 )};  
-    auto tv {-sin((2 * M_PI*5) / 10)}; 
-
 
     std::string file;
     std::cin >> file;
@@ -64,8 +59,8 @@ int main(){
     //Complex complexArr[bmp.getHeight() * bmp.getWidth()]; 
 
 
-    FFT fft{gray.getBlue(), gray.getGreen(), gray.getRed(),  bmp.getWidth(),  bmp.getHeight()}; 
-
+    FFT fft{bmp.getBlue(), bmp.getGreen(), bmp.getRed(),  bmp.getWidth(),  bmp.getHeight()}; 
+    bmp.saveImg(bmp.getWidth(),  bmp.getHeight(), fft.getBlue(), fft.getGreen(), fft.getRed()); 
 
 
 
