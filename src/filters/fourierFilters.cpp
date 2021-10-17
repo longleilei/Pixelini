@@ -4,8 +4,10 @@
 #include <numeric>
 #include <iomanip>
 
-FourierFilters::FourierFilters(const std::vector<std::vector<Complex>>& _dftMatrix, unsigned int width, unsigned int height )
-    :dftMatrix{_dftMatrix}{
+FourierFilters::FourierFilters(const std::vector<std::vector<Complex>>& _dftBlue, 
+    const std::vector<std::vector<Complex>>& _dftGreen, 
+    const std::vector<std::vector<Complex>>& _dftRed, unsigned int width, unsigned int height )
+    :dftBlue{_dftBlue},dftGreen{_dftGreen}, dftRed{_dftRed}{
 
     // std::cout << " hello from const " << std::endl;
 
@@ -21,7 +23,22 @@ FourierFilters::FourierFilters(const std::vector<std::vector<Complex>>& _dftMatr
     L = height; 
     length = M > L ? M : L; 
 
+    // auto blueC = filterMatrix(dftBlue); 
+    // auto greenC = filterMatrix(dftGreen); 
+    // auto redC = filterMatrix(dftRed); 
+
 }
+
+std::vector<std::vector<Complex>> FourierFilters::getcomplBlue(){
+    return dftBlue; 
+}; 
+std::vector<std::vector<Complex>> FourierFilters::getcomplGreen(){
+    return dftGreen; 
+}; 
+std::vector<std::vector<Complex>> FourierFilters::getcomplRed(){
+    return dftRed; 
+}; 
+
 
 
 
@@ -121,7 +138,7 @@ void FourierFilters::printMatrixDouble(std::vector<std::vector<double>> matrix, 
     }
 }
 
- std::vector<std::vector<Complex>> FourierFilters::filterMatrix(){
+ std::vector<std::vector<Complex>> FourierFilters::filterMatrix(std::vector<std::vector<Complex>>& dftMatrix){
  
     /* Filter generation */  
     
@@ -144,14 +161,14 @@ void FourierFilters::printMatrixDouble(std::vector<std::vector<double>> matrix, 
     
             filteredMatrix[i][j] = dftMatrix[i][j] * filterKernel[i][j]; 
             // std::cout << "dftMatrix[i][j] " << dftMatrix[i][j] << " filterKernel[i][j] " << filterKernel[i][j] << " filteredMatrix[i][j] " << filteredMatrix[i][j]; 
-            std::cout << dftMatrix[i][j] << " "; 
+            //std::cout << dftMatrix[i][j] << " "; 
 
         } 
         //std::cout << std::endl;
     }
 
-    std::cout << "printing filtered matrix" << std::endl; 
-    printMatrixComplex(filteredMatrix, length); 
+    //std::cout << "printing filtered matrix" << std::endl; 
+    //printMatrixComplex(filteredMatrix, length); 
 
 
     return filteredMatrix; 

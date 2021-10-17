@@ -60,6 +60,26 @@ int main(){
 
 
     FFT fft{bmp.getBlue(), bmp.getGreen(), bmp.getRed(),  bmp.getWidth(),  bmp.getHeight()}; 
+
+    auto blue{fft.createMatrixFromVector(fft.getcomplBlue())}; 
+    auto green{fft.createMatrixFromVector(fft.getcomplGreen())}; 
+    auto red{fft.createMatrixFromVector(fft.getcomplRed())}; 
+
+    // FourierFilters filteredMatrix{blue, green, red, bmp.getWidth(),  bmp.getHeight()}; 
+
+     
+    // auto blueVec{fft.createVectorFromMatrix(filteredMatrix.getcomplBlue())}; 
+    // auto greenVec{fft.createVectorFromMatrix(filteredMatrix.getcomplGreen())}; 
+    // auto redVec{fft.createVectorFromMatrix(filteredMatrix.getcomplRed())}; 
+
+    auto blueVec{fft.createVectorFromMatrix(blue)}; 
+    auto greenVec{fft.createVectorFromMatrix(green)}; 
+    auto redVec{fft.createVectorFromMatrix(red)}; 
+
+    fft.setVectors(fft.ifft(blueVec), fft.ifft(greenVec), fft.ifft(redVec));  
+
+    fft.reverseVectors();
+
     bmp.saveImg(bmp.getWidth(),  bmp.getHeight(), fft.getBlue(), fft.getGreen(), fft.getRed()); 
 
 

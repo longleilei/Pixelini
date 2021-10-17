@@ -19,23 +19,20 @@ FFT::FFT(const std::vector<unsigned char> &_blue, const std::vector<unsigned cha
     // std::cout << std::endl;
 
 
-    //std::vector<unsigned char> test{1,0,1,0}; 
-    auto result = fft(blue);
-    // for(int m{0}; m < result.size(); m++){
-    //     std::cout << result[m] << " ";       
-    // }
+    complBlue = fft(blue); 
 
-    // std::cout << std::endl;
+    // blue = ifft(result); 
+ 
+    complGreen = fft(green); 
+    
+    // green = ifft(result);
+    complRed = fft(red); 
+    
+    // red = ifft(result);
 
-    blue = ifft(result); 
-    result = fft(green);
-    green = ifft(result); 
-    result = fft(red); 
-    red = ifft(result);
-
-    std::reverse(blue.begin(), blue.end()); 
-    std::reverse(green.begin(), green.end()); 
-    std::reverse(red.begin(), red.end()); 
+    // std::reverse(blue.begin(), blue.end()); 
+    // std::reverse(green.begin(), green.end()); 
+    // std::reverse(red.begin(), red.end()); 
 
 
      
@@ -44,6 +41,79 @@ FFT::FFT(const std::vector<unsigned char> &_blue, const std::vector<unsigned cha
     // }
     
 };
+
+std::vector<Complex>FFT::getcomplBlue(){
+    return complBlue; 
+}
+std::vector<Complex>FFT::getcomplGreen(){
+    return complGreen; 
+}
+std::vector<Complex>FFT::getcomplRed(){
+    return complRed; 
+}
+
+void FFT::reverseVectors(){
+
+    std::reverse(blue.begin(), blue.end()); 
+    std::reverse(green.begin(), green.end()); 
+    std::reverse(red.begin(), red.end()); 
+};
+
+
+std::vector<std::vector<Complex>> FFT::createMatrixFromVector(std::vector<Complex> colorVec){
+
+    std::vector<Complex> tmp1(M, {0,0});
+    std::vector<std::vector<Complex>> matrix(L, tmp1);
+
+    for(int i{0}, k{0}; i < L; i++ ){
+        for(int j{0}; j< M; j++){
+            matrix[i][j] = colorVec[k];
+            // std::cout << colorVec[k] << "     "; 
+            k++;             
+        }
+        k++;
+        //std::cout << std::endl; 
+    }
+
+   
+
+    return matrix; 
+
+}
+
+std::vector<Complex> FFT::createVectorFromMatrix(std::vector<std::vector<Complex>> colorMat){
+
+    std::vector<Complex> colorVec;
+
+    for(int i{0}; i < L; i++ ){
+        for(int j{0}; j< M; j++){
+            colorVec.push_back(colorMat[i][j]); 
+        }
+    }
+
+    for(int i{0}; i < colorVec.size(); i++ ){
+        std::cout << colorVec[i] << "     ";   
+    }
+
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    return colorVec; 
+
+}
+
+void FFT::setVectors(std::vector<unsigned char> _blue, std::vector<unsigned char> _green, std::vector<unsigned char> _red){
+
+    blue.clear(); 
+    green.clear(); 
+    red.clear(); 
+
+    std::copy(_blue.begin(), _blue.end(), std::back_inserter(blue));
+    std::copy(_green.begin(), _green.end(), std::back_inserter(green));
+    std::copy(_red.begin(), _red.end(), std::back_inserter(red));
+}
+
 
 std::vector<Complex> FFT::fft(std::vector<unsigned  char>& img){
 
