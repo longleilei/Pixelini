@@ -71,7 +71,7 @@ std::vector<std::vector<Complex>> FFT::createMatrixFromVector(std::vector<Comple
             // std::cout << colorVec[k] << "     "; 
             k++;             
         }
-        k++;
+        //k++;
         //std::cout << std::endl; 
     }
 
@@ -85,19 +85,28 @@ std::vector<Complex> FFT::createVectorFromMatrix(std::vector<std::vector<Complex
 
     std::vector<Complex> colorVec;
 
+    // for(int i{0}; i < L; i++ ){
+    //     for(int j{0}; j< M; j++){
+    //         std::cout << colorMat[i][j] << "     ";
+    //     }
+    //     std::cout << std::endl;
+    // }
+
+    
+
     for(int i{0}; i < L; i++ ){
         for(int j{0}; j< M; j++){
             colorVec.push_back(colorMat[i][j]); 
         }
     }
 
-    for(int i{0}; i < colorVec.size(); i++ ){
-        std::cout << colorVec[i] << "     ";   
-    }
+    // for(int i{0}; i < colorVec.size(); i++ ){
+    //     std::cout << colorVec[i] << "     ";   
+    // }
 
 
-    std::cout << std::endl;
-    std::cout << std::endl;
+    // std::cout << std::endl;
+    // std::cout << std::endl;
 
     return colorVec; 
 

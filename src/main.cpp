@@ -62,23 +62,36 @@ int main(){
     FFT fft{bmp.getBlue(), bmp.getGreen(), bmp.getRed(),  bmp.getWidth(),  bmp.getHeight()}; 
 
     auto blue{fft.createMatrixFromVector(fft.getcomplBlue())}; 
+
+    std::cout << "blue" << blue[0][0] << std::endl; 
+
     auto green{fft.createMatrixFromVector(fft.getcomplGreen())}; 
     auto red{fft.createMatrixFromVector(fft.getcomplRed())}; 
 
-    // FourierFilters filteredMatrix{blue, green, red, bmp.getWidth(),  bmp.getHeight()}; 
+    FourierFilters filteredMatrix{blue, green, red, bmp.getWidth(),  bmp.getHeight()}; 
+    
 
+    // auto filteredBlue{filteredMatrix.filterMatrix(blue)}; 
+    // auto filteredGreen{filteredMatrix.filterMatrix(green)}; 
+    // auto filteredRed{filteredMatrix.filterMatrix(red)}; 
      
-    // auto blueVec{fft.createVectorFromMatrix(filteredMatrix.getcomplBlue())}; 
-    // auto greenVec{fft.createVectorFromMatrix(filteredMatrix.getcomplGreen())}; 
-    // auto redVec{fft.createVectorFromMatrix(filteredMatrix.getcomplRed())}; 
+    auto blueVec{fft.createVectorFromMatrix(filteredMatrix.getcomplBlue())}; 
 
-    auto blueVec{fft.createVectorFromMatrix(blue)}; 
-    auto greenVec{fft.createVectorFromMatrix(green)}; 
-    auto redVec{fft.createVectorFromMatrix(red)}; 
+    std::cout << "blueVec" << blueVec[0] << std::endl; 
+
+    auto greenVec{fft.createVectorFromMatrix(filteredMatrix.getcomplGreen())}; 
+    auto redVec{fft.createVectorFromMatrix(filteredMatrix.getcomplRed())}; 
+
+
+    // auto blueVec{fft.createVectorFromMatrix(blue)}; 
+    // auto greenVec{fft.createVectorFromMatrix(green)}; 
+    // auto redVec{fft.createVectorFromMatrix(red)}; 
 
     fft.setVectors(fft.ifft(blueVec), fft.ifft(greenVec), fft.ifft(redVec));  
 
     fft.reverseVectors();
+
+    std::cout << "fft " << (short)bmp.getBlue()[0] << std::endl; 
 
     bmp.saveImg(bmp.getWidth(),  bmp.getHeight(), fft.getBlue(), fft.getGreen(), fft.getRed()); 
 

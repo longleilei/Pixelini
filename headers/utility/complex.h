@@ -20,9 +20,11 @@ public:
     Complex operator-(int num);
     Complex operator*(const Complex&);
     Complex operator*(int);
+    Complex operator*(double num); 
     Complex operator/(int num);
     Complex operator/(const Complex&);
     Complex operator^(int num);
+    
     static Complex conjugate(const Complex&); 
 
 

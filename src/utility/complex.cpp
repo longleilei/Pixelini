@@ -70,6 +70,13 @@ Complex Complex::operator*(int num) {
     return temp;
 }
 
+Complex Complex::operator*(double num) {
+    Complex temp{ real, imaginary}; 
+    temp.real *= num;
+    temp.imaginary *= num;
+    return temp;
+}
+
 Complex Complex::operator/(int num) {
     Complex temp{ real, imaginary}; 
     temp.real /= num;

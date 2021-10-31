@@ -24,6 +24,8 @@ public:
     std::vector<std::vector<Complex>> matrixMult2(std::vector<std::vector<Complex>> matrixA, std::vector<std::vector<Complex>> matrixB, int M); 
     std::vector<std::vector<Complex>> matrixMultFinal(std::vector<std::vector<Complex>> matrixA, std::vector<std::vector<Complex>> matrixB, int M); 
 
+    double calculateThreshold(std::vector<std::vector<Complex>> pixelMatrix); 
+
     std::vector<std::vector<double>> generateFilter(int M, double threshold); 
     std::vector<std::vector<double>> generateGaussFilter(int M, double threshold); 
     std::vector<std::vector<double>> generateButterworthFilter(int M);  

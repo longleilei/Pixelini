@@ -13,19 +13,35 @@ FourierFilters::FourierFilters(const std::vector<std::vector<Complex>>& _dftBlue
 
     // for (int i{}; i < width; i++){
     //     for (int j{}; j < height; j++){
-    //         std::cout << dftMatrix[i][j] << " "; 
+    //         std::cout << dftBlue[i][j] << " "; 
     //     }
     //     std::cout << std::endl;
     // }
+    // threshold = 0.5; 
 
-    threshold = 0.5; 
     M = width; 
     L = height; 
     length = M > L ? M : L; 
 
-    // auto blueC = filterMatrix(dftBlue); 
-    // auto greenC = filterMatrix(dftGreen); 
-    // auto redC = filterMatrix(dftRed); 
+    //threshold = calculateThreshold(dftBlue); 
+    threshold = 0.0007; 
+    //std::cout << "THRESHOLD" << thr << std::endl; 
+
+
+    auto blue1 = filterMatrix(dftBlue); 
+    dftBlue = blue1; 
+
+    // for (int i{}; i < width; i++){
+    //     for (int j{}; j < height; j++){
+    //         std::cout << dftBlue[i][j] << " "; 
+    //     }
+    //     std::cout << std::endl;
+    // }
+    
+    auto dftGreen1 = filterMatrix(dftGreen); 
+    dftGreen = dftGreen1; 
+    auto dftRed1 = filterMatrix(dftRed); 
+    dftRed = dftRed1; 
 
 }
 
@@ -40,7 +56,20 @@ std::vector<std::vector<Complex>> FourierFilters::getcomplRed(){
 }; 
 
 
+double FourierFilters::calculateThreshold(std::vector<std::vector<Complex>> pixelMatrix){
 
+    double sum{}; 
+    for(int i{}; i < M; i++){
+        for(int j{}; j < L; j++){
+            //std::cout << pixelMatrix[i][j].getReal() << std::endl; 
+            sum += pixelMatrix[i][j].getReal();
+        }
+    }
+
+    //std::cout << "SUM" << sum << std::endl; 
+    double threshold = sum / (M*L); 
+    return threshold; 
+}
 
 
 std::vector<std::vector<double>> FourierFilters::generateFilter(int M, double threshold){
@@ -83,16 +112,22 @@ std::vector<std::vector<double>> FourierFilters::generateGaussFilter(int M, doub
         }
     }
 
-
     std::vector<double> tmp3(M, 0); 
     std::vector<std::vector<double>> distanceMatrixAfterThreshold(M, tmp3);
 
     for(int i{}; i < M; i++){
         for(int j{}; j < M; j++ ){
-            distanceMatrixAfterThreshold[i][j] = exp(-((distanceMatrix[i][j] * distanceMatrix[i][j])/(2*threshold*threshold))); 
+            distanceMatrixAfterThreshold[i][j] = exp(-((distanceMatrix[i][j] * distanceMatrix[i][j])/(2*700*700))); 
+            //std::cout << distanceMatrixAfterThreshold[i][j] << " " << -((distanceMatrix[i][j] * distanceMatrix[i][j])/(2*700*700)) <<  std::endl; 
         }
     }
 
+    // for(int i{}; i < M; i++){
+    //     for(int j{}; j < M; j++ ){
+    //         std::cout << distanceMatrixAfterThreshold[i][j] << " "; 
+    //     }
+    //     std::cout << std::endl; 
+    // }
     return distanceMatrixAfterThreshold; 
 }
 
@@ -142,8 +177,8 @@ void FourierFilters::printMatrixDouble(std::vector<std::vector<double>> matrix, 
  
     /* Filter generation */  
     
-    auto filterKernel = generateButterworthFilter(length); 
-
+    //std::cout << "threshold" << threshold << " "; 
+    auto filterKernel = generateGaussFilter(M, 1); 
 
     //std::cout << "printing a filter" << std::endl; 
     //printMatrixDouble(filterKernel, length); 
@@ -158,10 +193,11 @@ void FourierFilters::printMatrixDouble(std::vector<std::vector<double>> matrix, 
 
     for(int i{}; i < length; i++){
         for(int j{}; j < length; j++ ){
-    
+
             filteredMatrix[i][j] = dftMatrix[i][j] * filterKernel[i][j]; 
-            // std::cout << "dftMatrix[i][j] " << dftMatrix[i][j] << " filterKernel[i][j] " << filterKernel[i][j] << " filteredMatrix[i][j] " << filteredMatrix[i][j]; 
-            //std::cout << dftMatrix[i][j] << " "; 
+            //std::cout << "dftMatrix[i][j] " << dftMatrix[i][j] << " filterKernel[i][j] "
+            //<< filterKernel[i][j] << " filteredMatrix[i][j] " << filteredMatrix[i][j] << std::endl; 
+            //std::cout << dftMatrix[i][j] * filterKernel[i][j] << std::endl; 
 
         } 
         //std::cout << std::endl;
